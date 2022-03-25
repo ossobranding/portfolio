@@ -1,60 +1,104 @@
 <template>
-  <v-app>
-    <v-app-bar
-      app
-      color="primary"
-      dark
-    >
-      <div class="d-flex align-center">
-        <v-img
-          alt="Vuetify Logo"
-          class="shrink mr-2"
-          contain
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
-          transition="scale-transition"
-          width="40"
-        />
+  <v-app> 
+    <v-container>
+      <v-row justify="center" class="mt-5">
+        <v-btn-toggle v-model="toggle_exclusive">
+          <v-btn text style="border:none;">
+            HOME
+          </v-btn>
 
-        <v-img
-          alt="Vuetify Name"
-          class="shrink mt-1 hidden-sm-and-down"
-          contain
-          min-width="100"
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-name-dark.png"
-          width="100"
-        />
-      </div>
+          <v-btn text style="border:none;">
+            PROJECTS
+          </v-btn>
 
-      <v-spacer></v-spacer>
+          <v-btn text style="border:none;">
+            ABOUT
+          </v-btn>
 
-      <v-btn
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
-        text
-      >
-        <span class="mr-2">Latest Release</span>
-        <v-icon>mdi-open-in-new</v-icon>
-      </v-btn>
-    </v-app-bar>
+          <v-btn text style="border:none;">
+            RESUME
+          </v-btn>
+        </v-btn-toggle>
+      </v-row>
 
-    <v-main>
-      <HelloWorld/>
-    </v-main>
+      <v-row style="height:300px;">
+        <v-col> 
+          <v-card class="fill-height"> 
+            Hola
+          </v-card> 
+        </v-col>
+
+        <v-col class="pb-0">
+          <v-row  style="height:50%;">
+            <v-col class="ma-0 ">
+              <v-card class="fill-height">
+                Holi
+              </v-card>
+            </v-col> 
+          </v-row>
+
+          <v-row style="height:50%; margin-top:12px;">
+            <v-col class="ma-0 pb-0">
+              <v-card class="fill-height">
+                Hola
+              </v-card> 
+            </v-col>
+
+            <v-col class="ma-0 pb-0">
+              <v-card class="fill-height">
+                Hola
+              </v-card> 
+            </v-col>
+          </v-row> 
+        </v-col>
+
+        <v-col>
+          <v-card class="fill-height">
+            Hola
+          </v-card> 
+        </v-col>
+
+        <v-col class="pb-0">
+          <v-row  style="height:50%;">
+            <v-col class="ma-0 ">
+              <v-card class="fill-height">
+                Holi
+              </v-card>
+            </v-col> 
+          </v-row>
+
+          <v-row style="height:50%; margin-top:12px;">
+            <v-col class="ma-0 pb-0">
+              <v-card class="fill-height">
+                Hola
+              </v-card> 
+            </v-col>
+
+            <v-col class="ma-0 pb-0">
+              <v-card class="fill-height">
+                Hola
+              </v-card> 
+            </v-col>
+          </v-row> 
+        </v-col>
+
+      </v-row>
+    </v-container>
   </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld';
+ 
 
 export default {
   name: 'App',
 
-  components: {
-    HelloWorld,
-  },
+ 
 
-  data: () => ({
-    //
-  }),
+  data () {
+    return {
+
+    }
+  }
 };
 </script>
