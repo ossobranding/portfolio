@@ -1,5 +1,9 @@
+
 <template>
-  <v-app>
+
+  <v-app style="font-family:Rubik">
+ 
+
     <v-container>
       <v-row justify="center" class="mt-5">
         <v-btn-toggle v-model="toggle_exclusive">
@@ -196,6 +200,10 @@
     </v-container>
   </v-app>
 </template>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Rubik');
+</style> 
 
 <script>
 export default {
