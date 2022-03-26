@@ -1,21 +1,63 @@
-
-<template>
-
-  <v-app style="font-family:Rubik">
- 
-
+<template> 
+   <v-app style="font-family:Rubik">
+    
     <v-container>
-      <v-row justify="center" class="mt-5">
+       <h1 
+          style="width:100% ;font-size:100px;  font-weigth:bold; text-align:center;"
+          >
+          osso
+        </h1>
+
+      <v-row justify="center" class="mt-1">
         <v-btn-toggle v-model="toggle_exclusive">
-          <v-btn text style="border: none"> HOME </v-btn>
+          <v-btn text style="border: none"> SOBRE MI </v-btn>
 
-          <v-btn text style="border: none"> PROJECTS </v-btn>
+          <v-btn text style="border: none"> PROYECTOS </v-btn>
 
-          <v-btn text style="border: none"> ABOUT </v-btn>
+          <v-btn text style="border: none"> CONOCIMIENTOS </v-btn>
 
-          <v-btn text style="border: none"> RESUME </v-btn>
+          <v-btn text style="border: none"> SKILLS </v-btn>
+
+          <v-btn text style="border: none"> CONTACTO </v-btn>
         </v-btn-toggle>
       </v-row>
+
+      <h3 class="mt-4" style='font-family:"Emberly"; font-size:35px; text-align:center'>
+        Sobre mi
+      </h3>
+
+      <v-row class="mt-6">
+        <v-col  cols="6" >
+          <v-img :src="require(`@/assets/imagenes/fotografia.jpg`)">
+          </v-img>
+        </v-col>
+        <v-col>
+          <h2 
+            style="font-size:50px;  font-weigth:bold; "
+            >
+            Oscar Casado Lorenzo
+          </h2>
+
+          <h3 style="font-size:35px; color:#CCAB87;">
+            Desarrollador fullstack
+          </h3>
+          <h4 class="mt-3"  style="font-size:25px; color:grey; text-align:justify;">  
+            La idea de OSSO surge de un chico de 21 años que tras dedicar toda su vida a los estudios decide dar con 
+            la fórmula que convierta toda su energía, aprendizaje y aficiones en la mejor versión de sí mismo como profesional.
+          </h4>
+
+          <v-btn class="mt-3" style="background-color:#00E0E0">
+            <v-icon class="mr-2">
+              mdi-text-box
+            </v-icon>
+            <span>Descargar CV</span>
+          </v-btn>
+        </v-col>
+      </v-row>
+      
+      <h3 class="mt-4" style='font-family:"Emberly"; font-size:35px; text-align:center'>
+        Proyectos
+      </h3>
 
       <v-row>
         <v-col  
@@ -145,9 +187,14 @@
         </v-col>
       </v-row>
 
+      <h3 class="mt-4" style='font-family:"Emberly"; font-size:35px; text-align:center'>
+        Conocimientos
+      </h3>
+
+      <!--FRONTEND-->
       <v-row justify="center" >
         <v-col 
-          v-for="skill in skills" :key="skill.titulo"
+          v-for="skill in skillsFRONT" :key="skill.titulo"
           cols="1" 
           align-self="center"  
           style="min-width:75px;">
@@ -158,51 +205,43 @@
             aspect-ratio="1"
             :src= "require(`@/assets/logos/${skill.fichero}`)"  
           ></v-img>
-        </v-col>
-         
+          <h5 class="mt-1" style="wdth:100%;text-align:center;">{{skill.titulo}}</h5>
+        </v-col> 
       </v-row>
 
-      <v-footer
-        dark
-        padless
-      >
-        <v-card
-          flat
-          tile
-          class="indigo lighten-1 white--text text-center"
-        >
-          <v-card-text>
-            <v-btn
-              v-for="red in rrss"
-              :key="red"
-              class="mx-4 white--text"
-              icon
-              :href= red.url
-              target="_blank" 
-            > 
-              <v-icon size="24px">
-                {{ red.icono }}
-              </v-icon>
-            </v-btn>
-          </v-card-text>
+      <!--BACKEND-->
+      <v-row justify="center" >
+        <v-col 
+          v-for="skill in skillsBACK" :key="skill.titulo"
+          cols="1" 
+          align-self="center"  
+          style="min-width:75px;">
+          <v-img
+            class="mx-auto"
+            width="75%"
+            contain
+            aspect-ratio="1"
+            :src= "require(`@/assets/logos/${skill.fichero}`)"  
+          ></v-img>
+          <h5 class="mt-1" style="wdth:100%;text-align:center;">{{skill.titulo}}</h5>
+        </v-col> 
+      </v-row>
 
-          <v-card-text class="white--text pt-0">
-            Phasellus feugiat arcu sapien, et iaculis ipsum elementum sit amet. Mauris cursus commodo interdum. Praesent ut risus eget metus luctus accumsan id ultrices nunc. Sed at orci sed massa consectetur dignissim a sit amet dui. Duis commodo vitae velit et faucibus. Morbi vehicula lacinia malesuada. Nulla placerat augue vel ipsum ultrices, cursus iaculis dui sollicitudin. Vestibulum eu ipsum vel diam elementum tempor vel ut orci. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-          </v-card-text>
-
-          <v-divider></v-divider>
-
-          <v-card-text class="white--text">
-            {{ new Date().getFullYear() }} — <strong>Vuetify</strong>
-          </v-card-text>
-        </v-card>
-    </v-footer>
+      <h3 class="mt-4" style='font-family:"Emberly"; font-size:35px; text-align:center'>
+        Skills
+      </h3> 
+ 
     </v-container>
   </v-app>
 </template>
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Rubik');
+@font-face {
+  font-family: "Emberly";
+  src: local("Emberly"), 
+        url(./fonts/Emberly-ExtraBoldItalic.ttf) format("truetype");
+}
 </style> 
 
 <script>
@@ -211,7 +250,7 @@ export default {
 
   data() {
     return {
-      skills:[
+      skillsFRONT:[
         {
           titulo: 'HTML5',
           fichero:  'html5.svg'
@@ -240,6 +279,29 @@ export default {
           titulo: 'Illustrator',
           fichero:  'illustrator.svg'
         }, 
+      ],
+
+      skillsBACK:[
+        {
+          titulo: 'Java',
+          fichero:  'java.svg'
+        },
+        {
+          titulo: 'C++',
+          fichero:  'cpp.svg'
+        },
+        {
+          titulo:'NodeJS',
+          fichero: 'nodejs.svg'
+        },
+        {
+          titulo:'MySQL',
+          fichero: 'mysql.svg'
+        },
+        {
+          titulo:'mongoDB',
+          fichero: 'mongodb.svg'
+        } 
       ],
 
       rrss:[
