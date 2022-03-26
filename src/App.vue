@@ -15,7 +15,7 @@
 
       <v-row>
         <v-col  
-          style="height: 300px; width:170px; min-height:300px; min-width:170px;">
+          style="height: 276px; width:276px; min-height:276px; min-width:276px;">
           
           <v-card 
             class="fill-height" 
@@ -24,7 +24,7 @@
 
         <v-col 
           class="pb-0" 
-          style="height: 300px; width:200px; min-height:300px; min-width:200px;">
+          style="height: 276px; width:276px; min-height:276px; min-width:276px;">
 
           <v-row style="height: 50%">
             <v-col class="ma-0">
@@ -49,7 +49,7 @@
           </v-row>
         </v-col>
         <v-col  
-          style="height: 300px; width:170px; min-height:300px; min-width:170px;">
+          style="height: 276px; width:276px; min-height:276px; min-width:276px;">
           
           <v-card 
             class="fill-height" 
@@ -58,7 +58,7 @@
 
         <v-col 
           class="pb-0" 
-          style="height: 300px; width:200px; min-height:300px; min-width:200px;">
+          style="height: 276px; width:276px; min-height:276px; min-width:276px;">
 
           <v-row style="height: 50%">
             <v-col class="ma-0">
