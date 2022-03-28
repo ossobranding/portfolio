@@ -27,11 +27,26 @@
       </h3>
 
       <v-row class="mt-6">
-        <v-col  cols="6" >
-          <v-img :src="require(`@/assets/imagenes/fotografia.jpg`)">
-          </v-img>
+        <v-col sm="6" lg="6" md="6">
+          <v-carousel 
+            cycle
+            show-arrows-on-hover
+            hide-delimiter-background
+          >
+            <v-carousel-item v-for="fotografia in fotografias" :key="fotografia.id" >
+              <v-row
+                class="fill-height"
+                align="center"
+                justify="center"
+              >
+                  <v-img :src= "require(`@/assets/imagenes/${fotografia.fichero}`)"> 
+                  </v-img> 
+              </v-row>
+            </v-carousel-item>
+          </v-carousel>
         </v-col>
-        <v-col>
+
+        <v-col lg12 md12>
           <h2 
             style="font-size:50px;  font-weigth:bold; "
             >
@@ -320,6 +335,37 @@ export default {
           icono: 'mdi-gmail',
           url: 'oscarcl.work@gmail.com'
         } 
+      ],
+
+      fotografias:[ 
+        {
+          id:'1',
+          fichero: '1.jpg'
+        },
+        {
+          id:'2',
+          fichero: '2.jpg'
+        },
+        {
+          id:'3',
+          fichero: '3.jpg'
+        },
+        {
+          id:'4',
+          fichero: '4.jpeg'
+        },
+        {
+          id:'5',
+          fichero: '5.jpeg'
+        },
+        {
+          id:'6',
+          fichero: '6.jpeg'
+        },
+        {
+          id:'7',
+          fichero: '7.jpeg'
+        }
       ]
     };
   },
