@@ -1,15 +1,15 @@
-<template> 
-   <v-app style="font-family:Rubik">
+<template > 
+   <v-app style="font-family:Rubik-Regular">
     
     <v-container>
        <h1 
-          style="width:100% ;font-size:100px;  font-weigth:bold; text-align:center;"
+          style="line-height:100px; height:110px;width:100% ;font-size:100px;  font-weigth:bold; text-align:center;"  
           >
           osso
         </h1>
 
-      <v-row justify="center" class="mt-1">
-        <v-btn-toggle v-model="toggle_exclusive">
+      <v-row justify="center" class="ma-1">
+        <v-btn-toggle  >
           <v-btn text style="border: none"> SOBRE MI </v-btn>
 
           <v-btn text style="border: none"> PROYECTOS </v-btn>
@@ -22,11 +22,13 @@
         </v-btn-toggle>
       </v-row>
 
+      <v-divider></v-divider>
+
       <h3 class="mt-4" style='font-family:"Emberly"; font-size:35px; text-align:center'>
         Sobre mi
       </h3>
 
-      <v-row class="mt-6">
+      <v-row class="mt-4">
         <v-col sm="6" lg="6" md="6">
           <v-carousel 
             cycle
@@ -48,25 +50,44 @@
 
         <v-col lg12 md12>
           <h2 
-            style="font-size:50px;  font-weigth:bold; "
+            style="font-size:50px;  font-weigth:bold; text-align:center"
             >
             Oscar Casado Lorenzo
           </h2>
 
-          <h3 style="font-size:35px; color:#CCAB87;">
-            Desarrollador fullstack
+          <h3 style="font-size:35px; color:#CCAB87; text-align:center;">
+            <vue-typer
+              :text='["Desarrollador FullStack", "Diseñador gráfico"]'
+              :repeat='Infinity'
+              :shuffle='false'
+              initial-action='typing'
+              :pre-type-delay='70'
+              :type-delay='70'
+              :pre-erase-delay='2000'
+              :erase-delay='250'
+              erase-style='select-all'
+              :erase-on-complete='false'
+              caret-animation='blink'
+            ></vue-typer>
           </h3>
-          <h4 class="mt-3"  style="font-size:25px; color:grey; text-align:justify;">  
+ 
+         
+          <h4 class="mt-3"  style='font-family:"Rubik-Light";font-size:20px; color:grey; text-align:justify;'>  
             La idea de OSSO surge de un chico de 21 años que tras dedicar toda su vida a los estudios decide dar con 
             la fórmula que convierta toda su energía, aprendizaje y aficiones en la mejor versión de sí mismo como profesional.
+
           </h4>
 
-          <v-btn class="mt-3" style="background-color:#00E0E0">
-            <v-icon class="mr-2">
-              mdi-text-box
-            </v-icon>
-            <span>Descargar CV</span>
-          </v-btn>
+          <v-row style="justify-content:center;" class="mt-5">
+            <v-btn class="pa-5" style="background-color:#00E0E0">
+              <v-icon > mdi-page</v-icon> 
+              <a  
+                :href=  "`${BASE_URL}its_me.pdf`"   download 
+              >
+                  Descargar CV
+              </a>
+            </v-btn>
+          </v-row>
         </v-col>
       </v-row>
       
@@ -74,7 +95,7 @@
         Proyectos
       </h3>
 
-      <v-row>
+      <v-row class="mt-4">
         <v-col  
           style="height: 276px; width:276px; min-height:276px; min-width:276px;">
           
@@ -207,7 +228,7 @@
       </h3>
 
       <!--FRONTEND-->
-      <v-row justify="center" >
+      <v-row justify="center" class="mt-4">
         <v-col 
           v-for="skill in skillsFRONT" :key="skill.titulo"
           cols="1" 
@@ -244,27 +265,64 @@
 
       <h3 class="mt-4" style='font-family:"Emberly"; font-size:35px; text-align:center'>
         Skills
-      </h3> 
- 
+      </h3>  
+
+      <h3 class="mt-4" style='font-family:"Emberly"; font-size:35px; text-align:center'>
+        Contacto
+      </h3>  
+      
     </v-container>
+
+    <v-footer width="100%" style="justify-content:center;" class="mt-4">
+      <h4 style="text-align:center; width:100%">
+        OSSO
+      </h4>
+ 
+      <v-btn icon v-for="red in rrss" :key="red.titulo"  
+        :href= red.url target="_blank"
+        >
+          <v-icon > {{red.icono}}</v-icon>
+      </v-btn>
+ 
+ 
+    </v-footer>
   </v-app>
 </template>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Rubik');
+ 
 @font-face {
   font-family: "Emberly";
   src: local("Emberly"), 
-        url(./fonts/Emberly-ExtraBoldItalic.ttf) format("truetype");
+        url(./fonts/Emberly-ExtraBoldItalic.ttf) format("truetype");        
+}
+@font-face {
+  font-family: "Rubik-Regular"; 
+  src: local("Rubik-Regular"), 
+        url(./fonts/Rubik-Regular.ttf) format("truetype");        
+}
+@font-face {
+  font-family: "Rubik-Light"; 
+  src: local("Rubik-Light"), 
+        url(./fonts/Rubik-Light.ttf) format("truetype");        
 }
 </style> 
 
 <script>
+import {VueTyper} from 'vue-typer'
+
+
 export default {
   name: "App",
 
+  components:{
+    VueTyper
+  },
+
   data() {
     return {
+      BASE_URL: process.env.BASE_URL,
+
       skillsFRONT:[
         {
           titulo: 'HTML5',
