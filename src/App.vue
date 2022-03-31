@@ -35,13 +35,13 @@
             show-arrows-on-hover
             hide-delimiter-background
           >
-            <v-carousel-item v-for="fotografia in fotografias" :key="fotografia.id" >
+            <v-carousel-item v-for="fotografia in fotografias" :key="fotografia.id" eager>
               <v-row
                 class="fill-height"
                 align="center"
                 justify="center"
               >
-                  <v-img :src= "require(`@/assets/imagenes/${fotografia.fichero}`)"> 
+                  <v-img :src= "require(`@/assets/imagenes/${fotografia.fichero}`)" eager> 
                   </v-img> 
               </v-row>
             </v-carousel-item>
@@ -63,11 +63,12 @@
               initial-action='typing'
               :pre-type-delay='70'
               :type-delay='70'
-              :pre-erase-delay='2000'
+              :pre-erase-delay='5000'
               :erase-delay='250'
               erase-style='select-all'
               :erase-on-complete='false'
               caret-animation='blink'
+ 
             ></vue-typer>
           </h3>
  
@@ -82,7 +83,7 @@
             <v-btn class="pa-5" style="background-color:#00E0E0">
               <v-icon > mdi-page</v-icon> 
               <a  
-                :href=  "`${BASE_URL}its_me.pdf`"   download 
+                :href=  "`${BASE_URL}its_me.pdf`"   target="_blank"  
               >
                   Descargar CV
               </a>
@@ -99,16 +100,25 @@
         <v-col  
           style="height: 276px; width:276px; min-height:276px; min-width:276px;">
           
-          <v-card 
-            class="fill-height d-flex flex-column" 
-            style="background-color:#CCAB87;">  
-            <v-spacer></v-spacer>
-            <v-card-actions >
-              <v-btn icon right> 
-                <v-icon>mdi-github</v-icon>
-              </v-btn>
-            </v-card-actions>
-          </v-card>
+          <v-hover >
+            <v-card  
+              class="fill-height d-flex flex-column pl-1" 
+              style="background-color:#CCAB87;"> 
+
+              <v-row>
+                <v-col v-for="lang in herramientas" :key="lang.titulo" >
+                  <v-chip > {{lang.titulo}}</v-chip>
+                </v-col>
+              </v-row>   
+              
+              <v-spacer></v-spacer>
+              <v-card-actions >
+                <v-btn icon right > 
+                  <v-icon  >mdi-github</v-icon>
+                </v-btn>
+              </v-card-actions>
+            </v-card>
+          </v-hover>
         </v-col>
 
         <v-col 
@@ -222,6 +232,8 @@
           </v-row>
         </v-col>
       </v-row>
+
+  <v-sheet>HOLAs</v-sheet>
 
       <h3 class="mt-4" style='font-family:"Emberly"; font-size:35px; text-align:center'>
         Conocimientos
@@ -273,19 +285,24 @@
       
     </v-container>
 
-    <v-footer width="100%" style="justify-content:center;" class="mt-4">
-      <h4 style="text-align:center; width:100%">
-        OSSO
-      </h4>
- 
+    <v-footer width="100%" style="justify-content:center; color:grey;" class="mt-4">
+      <v-row  style="width:100%; justify-content:center; "  class="pa-5 ">
+        <a class="px-3" style="color:grey">Sobre mi</a>
+        <a class="px-3" style="color:grey">Proyectos</a>
+        <a class="px-3" style="color:grey"> Conocimientos</a>
+        <a class="px-3" style="color:grey">Skills</a>
+        <a class="px-3" style="color:grey">Contacto</a>
+      </v-row>
+
       <v-btn icon v-for="red in rrss" :key="red.titulo"  
-        :href= red.url target="_blank"
-        >
-          <v-icon > {{red.icono}}</v-icon>
+        :href= red.url target="_blank"  >
+          <v-icon color="grey"> {{red.icono}}</v-icon>
       </v-btn>
- 
- 
-    </v-footer>
+
+      <h4 style="text-align:center; width:100%"  class="pa-2">
+        © OSSO. Todos los derechos reservados.
+      </h4>
+   </v-footer>
   </v-app>
 </template>
 
@@ -322,6 +339,25 @@ export default {
   data() {
     return {
       BASE_URL: process.env.BASE_URL,
+
+    
+          herramientas: [
+            {
+            titulo: 'Java'
+            },
+            {
+            titulo: 'Illustrator'
+            },
+
+            {
+            titulo: 'HTML5'
+            },
+
+            {
+            titulo: 'Bootstrap'
+            }
+          ],
+      
 
       skillsFRONT:[
         {
