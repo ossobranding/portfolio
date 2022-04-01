@@ -9,17 +9,17 @@
         </h1>
 
       <v-row justify="center" class="ma-1">
-        <v-btn-toggle  >
+ 
           <v-btn text style="border: none"> SOBRE MI </v-btn>
 
           <v-btn text style="border: none"> PROYECTOS </v-btn>
 
           <v-btn text style="border: none"> CONOCIMIENTOS </v-btn>
 
-          <v-btn text style="border: none"> SKILLS </v-btn>
+          <v-btn text style="border: none"> HABILIDADES </v-btn>
 
           <v-btn text style="border: none"> CONTACTO </v-btn>
-        </v-btn-toggle>
+ 
       </v-row>
 
       <v-divider></v-divider>
@@ -34,6 +34,7 @@
             cycle
             show-arrows-on-hover
             hide-delimiter-background
+            style="border-radius:5px;"
           >
             <v-carousel-item v-for="fotografia in fotografias" :key="fotografia.id" eager>
               <v-row
@@ -76,16 +77,15 @@
           <h4 class="mt-3"  style='font-family:"Rubik-Light";font-size:20px; color:grey; text-align:justify;'>  
             La idea de OSSO surge de un chico de 21 años que tras dedicar toda su vida a los estudios decide dar con 
             la fórmula que convierta toda su energía, aprendizaje y aficiones en la mejor versión de sí mismo como profesional.
-
           </h4>
 
           <v-row style="justify-content:center;" class="mt-5">
             <v-btn class="pa-5" style="background-color:#00E0E0">
-              <v-icon > mdi-page</v-icon> 
-              <a  
-                :href=  "`${BASE_URL}its_me.pdf`"   target="_blank"  
+              <v-icon > mdi-file-document-outline </v-icon> 
+              <a  style="text-decoration:none;color:black;" class="ml-2"
+                :href=  "`${BASE_URL}CV.pdf`"   target="_blank"  
               >
-                  Descargar CV
+                  VER CURRICULUM
               </a>
             </v-btn>
           </v-row>
@@ -102,16 +102,9 @@
           
           <v-hover >
             <v-card  
-              class="fill-height d-flex flex-column pl-1" 
+              class="fill-height d-flex flex-column  " 
               style="background-color:#CCAB87;"> 
-
-              <v-row>
-                <v-col v-for="lang in herramientas" :key="lang.titulo" >
-                  <v-chip > {{lang.titulo}}</v-chip>
-                </v-col>
-              </v-row>   
-              
-              <v-spacer></v-spacer>
+              <v-spacer></v-spacer> 
               <v-card-actions >
                 <v-btn icon right > 
                   <v-icon  >mdi-github</v-icon>
@@ -232,9 +225,7 @@
           </v-row>
         </v-col>
       </v-row>
-
-  <v-sheet>HOLAs</v-sheet>
-
+ 
       <h3 class="mt-4" style='font-family:"Emberly"; font-size:35px; text-align:center'>
         Conocimientos
       </h3>
@@ -276,9 +267,10 @@
       </v-row>
 
       <h3 class="mt-4" style='font-family:"Emberly"; font-size:35px; text-align:center'>
-        Skills
+        Habilidades
       </h3>  
-
+ 
+ 
       <h3 class="mt-4" style='font-family:"Emberly"; font-size:35px; text-align:center'>
         Contacto
       </h3>  
@@ -290,7 +282,7 @@
         <a class="px-3" style="color:grey">Sobre mi</a>
         <a class="px-3" style="color:grey">Proyectos</a>
         <a class="px-3" style="color:grey"> Conocimientos</a>
-        <a class="px-3" style="color:grey">Skills</a>
+        <a class="px-3" style="color:grey">Habilidades</a>
         <a class="px-3" style="color:grey">Contacto</a>
       </v-row>
 
@@ -341,23 +333,7 @@ export default {
       BASE_URL: process.env.BASE_URL,
 
     
-          herramientas: [
-            {
-            titulo: 'Java'
-            },
-            {
-            titulo: 'Illustrator'
-            },
-
-            {
-            titulo: 'HTML5'
-            },
-
-            {
-            titulo: 'Bootstrap'
-            }
-          ],
-      
+       
 
       skillsFRONT:[
         {
