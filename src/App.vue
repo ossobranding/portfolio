@@ -29,7 +29,7 @@
       </h3>
 
       <v-row class="mt-4">
-        <v-col sm="6" lg="6" md="6">
+        <v-col sm="6" lg="6" md="6" >
           <v-carousel 
             cycle
             show-arrows-on-hover
@@ -83,7 +83,7 @@
             <v-btn class="pa-5" style="background-color:#00E0E0">
               <v-icon > mdi-file-document-outline </v-icon> 
               <a  style="text-decoration:none;color:black;" class="ml-2"
-                :href=  "`${BASE_URL}CV.pdf`"   target="_blank"  
+                 :href=  " '/files/CV.pdf' "  download = "CV.pdf"
               >
                   VER CURRICULUM
               </a>
@@ -96,185 +96,33 @@
         Proyectos
       </h3>
 
-      <v-row class="mt-4">
-        <v-col  
-          style="height: 276px; width:276px; min-height:276px; min-width:276px;">
-          
-          <v-hover >
-            <v-card  
-              class="fill-height d-flex flex-column  " 
-              style="background-color:#CCAB87;"> 
-              <v-spacer></v-spacer> 
-              <v-card-actions >
-                <v-btn icon right > 
-                  <v-icon  >mdi-github</v-icon>
-                </v-btn>
-              </v-card-actions>
-            </v-card>
-          </v-hover>
-        </v-col>
-
-        <v-col 
-          class="pb-0" 
-          style="height: 276px; width:276px; min-height:276px; min-width:276px;">
-
-          <v-row style="height: 50%">
-            <v-col class="ma-0">
-              <v-card 
-                class="fill-height d-flex flex-column"
-                style="background-color:#00E0E0"> 
-                <v-spacer></v-spacer>
-                <v-card-actions >
-                  <v-btn icon right> 
-                    <v-icon>mdi-github</v-icon>
-                  </v-btn>
-                </v-card-actions>
-              </v-card>
-            </v-col>
-          </v-row>
-
-          <v-row style="height: 50%; margin-top: 12px">
-            <v-col class="ma-0 pb-0 ">
-              <v-card 
-                class="fill-height  d-flex flex-column"
-                style="background-color:#E8E8E8;">   
-                <v-spacer></v-spacer>
-                <v-card-actions >
-                  <v-btn icon right> 
-                    <v-icon>mdi-github</v-icon>
-                  </v-btn>
-                </v-card-actions>  
-              </v-card>
-            </v-col>
-
-            <v-col class="ma-0 pb-0">
-              <v-card 
-                class="fill-height  d-flex flex-column"
-                style="background-color:#E8E8E8;">   
-                <v-spacer></v-spacer>
-                <v-card-actions >
-                  <v-btn icon right> 
-                    <v-icon>mdi-github</v-icon>
-                  </v-btn>
-                </v-card-actions>  
-              </v-card>
-            </v-col>
-          </v-row>
-        </v-col>
-
-        <v-col  
-          style="height: 276px; width:276px; min-height:276px; min-width:276px;">
-          
-          <v-card 
-            class="fill-height d-flex flex-column" 
-            style="background-color:#CCAB87;">  
-            <v-spacer></v-spacer>
-            <v-card-actions >
-              <v-btn icon right> 
-                <v-icon>mdi-github</v-icon>
-              </v-btn>
-            </v-card-actions>
-          </v-card>
-        </v-col>
-
-        <v-col 
-          class="pb-0" 
-          style="height: 276px; width:276px; min-height:276px; min-width:276px;">
-
-          <v-row style="height: 50%">
-            <v-col class="ma-0">
-              <v-card 
-                class="fill-height d-flex flex-column"
-                style="background-color:#00E0E0"> 
-                <v-spacer></v-spacer>
-                <v-card-actions >
-                  <v-btn icon right> 
-                    <v-icon>mdi-github</v-icon>
-                  </v-btn>
-                </v-card-actions>
-              </v-card>
-            </v-col>
-          </v-row>
-
-          <v-row style="height: 50%; margin-top: 12px">
-            <v-col class="ma-0 pb-0 ">
-              <v-card 
-                class="fill-height  d-flex flex-column"
-                style="background-color:#E8E8E8;">   
-                <v-spacer></v-spacer>
-                <v-card-actions >
-                  <v-btn icon right> 
-                    <v-icon>mdi-github</v-icon>
-                  </v-btn>
-                </v-card-actions>  
-              </v-card>
-            </v-col>
-
-            <v-col class="ma-0 pb-0">
-              <v-card 
-                class="fill-height  d-flex flex-column"
-                style="background-color:#E8E8E8;">   
-                <v-spacer></v-spacer>
-                <v-card-actions >
-                  <v-btn icon right> 
-                    <v-icon>mdi-github</v-icon>
-                  </v-btn>
-                </v-card-actions>  
-              </v-card>
-            </v-col>
-          </v-row>
-        </v-col>
-      </v-row>
- 
+      <projects-component></projects-component>
+      
       <h3 class="mt-4" style='font-family:"Emberly"; font-size:35px; text-align:center'>
         Conocimientos
       </h3>
 
-      <!--FRONTEND-->
-      <v-row justify="center" class="mt-4">
-        <v-col 
-          v-for="skill in skillsFRONT" :key="skill.titulo"
-          cols="1" 
-          align-self="center"  
-          style="min-width:75px;">
-          <v-img
-            class="mx-auto"
-            width="75%"
-            contain
-            aspect-ratio="1"
-            :src= "require(`@/assets/logos/${skill.fichero}`)"  
-          ></v-img>
-          <h5 class="mt-1" style="wdth:100%;text-align:center;">{{skill.titulo}}</h5>
-        </v-col> 
-      </v-row>
-
-      <!--BACKEND-->
-      <v-row justify="center" >
-        <v-col 
-          v-for="skill in skillsBACK" :key="skill.titulo"
-          cols="1" 
-          align-self="center"  
-          style="min-width:75px;">
-          <v-img
-            class="mx-auto"
-            width="75%"
-            contain
-            aspect-ratio="1"
-            :src= "require(`@/assets/logos/${skill.fichero}`)"  
-          ></v-img>
-          <h5 class="mt-1" style="wdth:100%;text-align:center;">{{skill.titulo}}</h5>
-        </v-col> 
-      </v-row>
+      
 
       <h3 class="mt-4" style='font-family:"Emberly"; font-size:35px; text-align:center'>
         Habilidades
       </h3>  
+
+      <skills-component></skills-component>
  
  
       <h3 class="mt-4" style='font-family:"Emberly"; font-size:35px; text-align:center'>
         Contacto
       </h3>  
-      
+
+      <v-row justify="center" class="mt-4">
+        <v-form>
+          <v-text-field outlined single-line label="Correo electrónico" placeholder="jhon@gmail.com"></v-text-field>
+          <v-text-field outlined single-line label="Asunto" ></v-text-field>
+          <v-text-field outlined single-line label="Escribe aquí tu mensaje"></v-text-field>
+          <v-btn>Enviar</v-btn>
+        </v-form>
+      </v-row>
     </v-container>
 
     <v-footer width="100%" style="justify-content:center; color:grey;" class="mt-4">
@@ -319,76 +167,18 @@
 
 <script>
 import {VueTyper} from 'vue-typer'
-
+import SkillsComponent from './components/SkillsComponent.vue'
+import ProjectsComponent from './components/ProyectsComponent.vue'
 
 export default {
   name: "App",
 
   components:{
-    VueTyper
+    VueTyper, SkillsComponent, ProjectsComponent 
   },
 
   data() {
-    return {
-      BASE_URL: process.env.BASE_URL,
-
-    
-       
-
-      skillsFRONT:[
-        {
-          titulo: 'HTML5',
-          fichero:  'html5.svg'
-        },
-        {
-          titulo: 'CSS3',
-          fichero:  'css3.svg'
-        },
-        {
-          titulo: 'JavaScript',
-          fichero:  'javascript.svg'
-        },
-        {
-          titulo: 'Laravel',
-          fichero:  'laravel.svg'
-        },
-        {
-          titulo: 'Vue',
-          fichero:  'vuejs.svg'
-        },
-        {
-          titulo: 'Photoshop',
-          fichero:  'photoshop.svg'
-        },
-        {
-          titulo: 'Illustrator',
-          fichero:  'illustrator.svg'
-        }, 
-      ],
-
-      skillsBACK:[
-        {
-          titulo: 'Java',
-          fichero:  'java.svg'
-        },
-        {
-          titulo: 'C++',
-          fichero:  'cpp.svg'
-        },
-        {
-          titulo:'NodeJS',
-          fichero: 'nodejs.svg'
-        },
-        {
-          titulo:'MySQL',
-          fichero: 'mysql.svg'
-        },
-        {
-          titulo:'mongoDB',
-          fichero: 'mongodb.svg'
-        } 
-      ],
-
+    return { 
       rrss:[
         {
           titulo: 'Linkedin',
