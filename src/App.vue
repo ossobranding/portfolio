@@ -10,46 +10,51 @@
 
       <v-row justify="center" class="ma-1">
  
-          <v-btn text style="border: none"> SOBRE MI </v-btn>
+          <v-btn v-on:click="scrollToElement({behavior: 'smooth'} , 'about')"
+                text style="border: none"> SOBRE MI </v-btn>
 
-          <v-btn text style="border: none"> PROYECTOS </v-btn>
+          <v-btn v-on:click="scrollToElement({behavior: 'smooth'} , 'proyects')"
+                text style="border: none"> PROYECTOS </v-btn>
 
-          <v-btn text style="border: none"> CONOCIMIENTOS </v-btn>
+          <v-btn v-on:click="scrollToElement({behavior: 'smooth'} , 'knowledges')"
+                text style="border: none"> CONOCIMIENTOS </v-btn>
 
-          <v-btn text style="border: none"> HABILIDADES </v-btn>
+          <v-btn v-on:click="scrollToElement({behavior: 'smooth'} , 'skills')" 
+                text style="border: none"> HABILIDADES </v-btn>
 
-          <v-btn text style="border: none"> CONTACTO </v-btn>
+          <v-btn v-on:click="scrollToElement({behavior: 'smooth'} , 'contact')"
+                text style="border: none"> CONTACTO </v-btn>
  
       </v-row>
 
       <v-divider></v-divider>
 
-      <h3 class="mt-4" style='font-family:"Emberly"; font-size:35px; text-align:center'>
+      <h3  class="mt-4 about" style='font-family:"Emberly"; font-size:35px; text-align:center'>
         Sobre mi
       </h3>
 
-      <about-component></about-component>
+      <about-component ></about-component>
       
-      <h3 class="mt-4" style='font-family:"Emberly"; font-size:35px; text-align:center'>
+      <h3 class="mt-4 proyects" style='font-family:"Emberly"; font-size:35px; text-align:center'>
         Proyectos
       </h3>
 
-      <projects-component></projects-component>
+      <projects-component ></projects-component>
       
-      <h3 class="mt-4" style='font-family:"Emberly"; font-size:35px; text-align:center'>
+      <h3 class="mt-4 knowledges" style='font-family:"Emberly"; font-size:35px; text-align:center'>
         Conocimientos
       </h3>
 
       
 
-      <h3 class="mt-4" style='font-family:"Emberly"; font-size:35px; text-align:center'>
+      <h3 class="mt-4 skills" style='font-family:"Emberly"; font-size:35px; text-align:center'>
         Habilidades
       </h3>  
 
-      <skills-component></skills-component>
+      <skills-component ></skills-component>
  
  
-      <h3 class="mt-4 anim" style='font-family:"Emberly"; font-size:35px; text-align:center'>
+      <h3 class="mt-4 contact" style='font-family:"Emberly"; font-size:35px; text-align:center'>
         Contacto
       </h3>  
 
@@ -140,5 +145,15 @@ export default {
       
     };
   },
+
+  methods: {
+  scrollToElement(options, focus) {
+    const el = this.$el.getElementsByClassName(focus)[0];
+    
+    if (el) {
+      el.scrollIntoView(options);
+    }
+  } 
+  }
 };
 </script>
