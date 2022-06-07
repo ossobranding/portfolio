@@ -9,7 +9,7 @@
             style="min-width:75px;">
             
                 <v-img
-                class="mx-auto"
+                class="mx-auto anim"
                 width="75%"
                 contain
                 aspect-ratio="1"
@@ -24,12 +24,11 @@
         <v-row justify="center" >
             <v-col 
             v-for="skill in skillsBACK" :key="skill.titulo " eager
-            cols="1" 
-            class="anim"
+            cols="1"  
             align-self="center"  
             style="min-width:75px;">
             <v-img
-                class="mx-auto"
+                class="mx-auto anim"
                 width="75%"
                 contain
                 aspect-ratio="1"
@@ -41,6 +40,23 @@
         </v-row>
     </v-container> 
 </template>
+
+<style scoped>
+
+  .anim:hover{
+      animation: bounce 1s infinite;   
+    }
+
+  @keyframes bounce {
+      
+      50%{
+          transform: scale(1.2);
+      }
+      100%{
+          transform: scale(1);
+      }
+  }
+</style>
 
 <script>
 export default {
@@ -111,19 +127,5 @@ export default {
 
 <style>
 
-    .anim:hover{
-        animation: bounce 1s infinite;   
-    }
-
-    @keyframes bounce {
-        0%{
-            transform: scale(0);
-        }
-        50%{
-            transform: scale(1.5);
-        }
-        100%{
-            transform: scale(1);
-        }
-    }
+    
 </style>

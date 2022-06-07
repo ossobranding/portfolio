@@ -102,21 +102,6 @@
           url(./fonts/Rubik-Light.ttf) format("truetype");        
   }
 
-  .anim:hover{
-      animation: bounce 1s infinite;   
-    }
-
-  @keyframes bounce {
-      0%{
-          transform: scale(0);
-      }
-      50%{
-          transform: scale(1.5);
-      }
-      100%{
-          transform: scale(1);
-      }
-  }
 </style> 
 
 <script>
