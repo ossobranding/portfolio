@@ -3,6 +3,7 @@
     
     <v-container>
        <h1 
+          class="osso"
           style="line-height:100px; height:110px;width:100% ;font-size:100px;  font-weigth:bold; text-align:center;"  
           >
           osso
@@ -44,7 +45,12 @@
       <h3 class="mt-4 knowledges" style='font-family:"Emberly"; font-size:35px; text-align:center'>
         Conocimientos
       </h3>
-
+      
+      <!--
+      <v-img  :src= "require(`@/assets/illustrations/Inspiration.jpg`)" eager ></v-img>
+      <v-img  :src= "require(`@/assets/illustrations/Logotypes.jpg`)" eager ></v-img>
+      <v-img  :src= "require(`@/assets/illustrations/Weare.jpg`)" eager ></v-img>
+      -->
       
 
       <h3 class="mt-4 skills" style='font-family:"Emberly"; font-size:35px; text-align:center'>
@@ -153,7 +159,8 @@ export default {
     if (el) {
       el.scrollIntoView(options);
     }
-  } 
+  },
+   
   }
 };
 </script>
