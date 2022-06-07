@@ -23,8 +23,9 @@
         <!--BACKEND-->
         <v-row justify="center" >
             <v-col 
-            v-for="skill in skillsBACK" :key="skill.titulo"
+            v-for="skill in skillsBACK" :key="skill.titulo " eager
             cols="1" 
+            class="anim"
             align-self="center"  
             style="min-width:75px;">
             <v-img
@@ -32,7 +33,8 @@
                 width="75%"
                 contain
                 aspect-ratio="1"
-                :src= "require(`@/assets/logos/${skill.fichero}`)"  
+                :src= "require(`@/assets/logos/${skill.fichero}`)" 
+                eager 
             ></v-img>
             <h5 class="mt-1" style="wdth:100%;text-align:center;">{{skill.titulo}}</h5>
             </v-col> 
@@ -109,4 +111,19 @@ export default {
 
 <style>
 
+    .anim:hover{
+        animation: bounce 1s infinite;   
+    }
+
+    @keyframes bounce {
+        0%{
+            transform: scale(0);
+        }
+        50%{
+            transform: scale(1.5);
+        }
+        100%{
+            transform: scale(1);
+        }
+    }
 </style>

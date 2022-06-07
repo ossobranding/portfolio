@@ -49,7 +49,7 @@
       <skills-component></skills-component>
  
  
-      <h3 class="mt-4" style='font-family:"Emberly"; font-size:35px; text-align:center'>
+      <h3 class="mt-4 anim" style='font-family:"Emberly"; font-size:35px; text-align:center'>
         Contacto
       </h3>  
 
@@ -86,21 +86,37 @@
 
 <style>
  
-@font-face {
-  font-family: "Emberly";
-  src: local("Emberly"), 
-        url(./fonts/Emberly-ExtraBoldItalic.ttf) format("truetype");        
-}
-@font-face {
-  font-family: "Rubik-Regular"; 
-  src: local("Rubik-Regular"), 
-        url(./fonts/Rubik-Regular.ttf) format("truetype");        
-}
-@font-face {
-  font-family: "Rubik-Light"; 
-  src: local("Rubik-Light"), 
-        url(./fonts/Rubik-Light.ttf) format("truetype");        
-}
+  @font-face {
+    font-family: "Emberly";
+    src: local("Emberly"), 
+          url(./fonts/Emberly-ExtraBoldItalic.ttf) format("truetype");        
+  }
+  @font-face {
+    font-family: "Rubik-Regular"; 
+    src: local("Rubik-Regular"), 
+          url(./fonts/Rubik-Regular.ttf) format("truetype");        
+  }
+  @font-face {
+    font-family: "Rubik-Light"; 
+    src: local("Rubik-Light"), 
+          url(./fonts/Rubik-Light.ttf) format("truetype");        
+  }
+
+  .anim:hover{
+      animation: bounce 1s infinite;   
+    }
+
+  @keyframes bounce {
+      0%{
+          transform: scale(0);
+      }
+      50%{
+          transform: scale(1.5);
+      }
+      100%{
+          transform: scale(1);
+      }
+  }
 </style> 
 
 <script>
