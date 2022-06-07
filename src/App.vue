@@ -3,6 +3,7 @@
     
     <v-container>
        <h1 
+          class="osso"
           style="line-height:100px; height:110px;width:100% ;font-size:100px;  font-weigth:bold; text-align:center;"  
           >
           osso
@@ -153,7 +154,8 @@ export default {
     if (el) {
       el.scrollIntoView(options);
     }
-  } 
+  },
+   
   }
 };
 </script>
