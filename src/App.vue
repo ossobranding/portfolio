@@ -119,26 +119,7 @@ export default {
   },
 
   data() {
-    return { 
-      rrss:[
-        {
-          titulo: 'Linkedin',
-          icono: 'mdi-linkedin',
-          url: 'https://es.linkedin.com/in/oscarcasadolorenzo'
-        },
-        {
-          titulo: 'Instagram',
-          icono: 'mdi-instagram',
-          url: 'https://www.instagram.com/osso.branding/'
-        },
-        {
-          titulo: 'Email',
-          icono: 'mdi-gmail',
-          url: 'oscarcl.work@gmail.com'
-        } 
-      ],
-
-      
+    return {  
     };
   },
 
