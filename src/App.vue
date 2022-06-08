@@ -36,6 +36,9 @@
 
       <about-component ></about-component>
       
+      <!--
+
+      
       <h3 class="mt-4 proyects" style='font-family:"Emberly"; font-size:35px; text-align:center'>
         Proyectos
       </h3>
@@ -46,11 +49,11 @@
         Conocimientos
       </h3>
       
-      <!--
+       
       <v-img  :src= "require(`@/assets/illustrations/Inspiration.jpg`)" eager ></v-img>
       <v-img  :src= "require(`@/assets/illustrations/Logotypes.jpg`)" eager ></v-img>
       <v-img  :src= "require(`@/assets/illustrations/Weare.jpg`)" eager ></v-img>
-      -->
+     
       
 
       <h3 class="mt-4 skills" style='font-family:"Emberly"; font-size:35px; text-align:center'>
@@ -72,26 +75,11 @@
           <v-btn>Enviar</v-btn>
         </v-form>
       </v-row>
+      -->
     </v-container>
 
-    <v-footer width="100%" style="justify-content:center; color:grey;" class="mt-4">
-      <v-row  style="width:100%; justify-content:center; "  class="pa-5 ">
-        <a class="px-3" style="color:grey">Sobre mi</a>
-        <a class="px-3" style="color:grey">Proyectos</a>
-        <a class="px-3" style="color:grey"> Conocimientos</a>
-        <a class="px-3" style="color:grey">Habilidades</a>
-        <a class="px-3" style="color:grey">Contacto</a>
-      </v-row>
-
-      <v-btn icon v-for="red in rrss" :key="red.titulo"  
-        :href= red.url target="_blank"  >
-          <v-icon color="grey"> {{red.icono}}</v-icon>
-      </v-btn>
-
-      <h4 style="text-align:center; width:100%"  class="pa-2">
-        © OSSO. Todos los derechos reservados.
-      </h4>
-   </v-footer>
+    
+   
   </v-app>
 </template>
 
@@ -117,15 +105,17 @@
 
 <script>
 
+/*
 import SkillsComponent from './components/SkillsComponent.vue'
 import ProjectsComponent from './components/ProyectsComponent.vue'
 import AboutComponent from './components/AboutComponent.vue'
+*/
 
 export default {
   name: "App",
 
   components:{
-    AboutComponent, SkillsComponent, ProjectsComponent 
+    //AboutComponent, SkillsComponent, ProjectsComponent 
   },
 
   data() {
