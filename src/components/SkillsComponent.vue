@@ -44,11 +44,10 @@
 <style scoped>
 
   .anim:hover{
-      animation: bounce 1s infinite;   
+      animation: bounce 1.5s infinite;   
     }
 
-  @keyframes bounce {
-      
+  @keyframes bounce { 
       50%{
           transform: scale(1.2);
       }

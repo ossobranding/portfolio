@@ -1,7 +1,9 @@
 <template > 
-   <v-app style="font-family:Rubik-Regular">
+   <v-app  >
     
-     
+     <v-main id="main">
+       <about-component></about-component>
+     </v-main>
 
     
    
@@ -26,21 +28,29 @@
           url(./fonts/Rubik-Light.ttf) format("truetype");        
   }
 
+  #main{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+  }
+
 </style> 
 
 <script>
 
 /*
 import SkillsComponent from './components/SkillsComponent.vue'
+
 import ProjectsComponent from './components/ProyectsComponent.vue'
-import AboutComponent from './components/AboutComponent.vue'
 */
+import AboutComponent from './components/AboutComponent.vue'
+
 
 export default {
   name: "App",
 
   components:{
-    //AboutComponent, SkillsComponent, ProjectsComponent 
+     AboutComponent 
   },
 
   data() {
@@ -48,15 +58,7 @@ export default {
     };
   },
 
-  methods: {
-  scrollToElement(options, focus) {
-    const el = this.$el.getElementsByClassName(focus)[0];
-    
-    if (el) {
-      el.scrollIntoView(options);
-    }
-  },
-   
+  methods: { 
   }
 };
 </script>
