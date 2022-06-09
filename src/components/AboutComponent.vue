@@ -1,7 +1,7 @@
 <template>
     <v-container>
       <v-row class="mt-4">
-        <v-col sm="6" lg="6" md="6" >
+        <v-col sm="12" lg="6" md="6" >
           <v-carousel 
             cycle
             show-arrows-on-hover

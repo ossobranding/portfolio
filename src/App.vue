@@ -2,7 +2,7 @@
    <v-app  >
     
      <v-main id="main">
-       <about-component></about-component>
+       <landing-page></landing-page>
      </v-main>
 
     
@@ -26,14 +26,7 @@
     font-family: "Rubik-Light"; 
     src: local("Rubik-Light"), 
           url(./fonts/Rubik-Light.ttf) format("truetype");        
-  }
-
-  #main{
-    display:flex;
-    justify-content: center;
-    align-items: center;
-  }
-
+  } 
 </style> 
 
 <script>
@@ -42,15 +35,17 @@
 import SkillsComponent from './components/SkillsComponent.vue'
 
 import ProjectsComponent from './components/ProyectsComponent.vue'
-*/
+
 import AboutComponent from './components/AboutComponent.vue'
+*/
+import LandingPage from './components/LandingPage.vue'
 
 
 export default {
   name: "App",
 
   components:{
-     AboutComponent 
+     LandingPage
   },
 
   data() {
