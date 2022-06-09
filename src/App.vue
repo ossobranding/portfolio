@@ -1,6 +1,7 @@
 <template > 
-   <v-app  >
-    
+   <v-app >
+     <div class="cursor">
+     </div>
      <v-main id="main">
        <landing-page></landing-page>
      </v-main>
@@ -26,6 +27,14 @@
     font-family: "Rubik-Light"; 
     src: local("Rubik-Light"), 
           url(./fonts/Rubik-Light.ttf) format("truetype");        
+  } 
+
+  .cursor{
+    width: 20px;
+    height: 20px;
+    border: 1px solid black;
+    border-radius: 50%;
+    position: absolute;
   } 
 </style> 
 
@@ -53,7 +62,16 @@ export default {
     };
   },
 
-  methods: { 
+  methods: {  
+    moveCursor(event) { 
+      var cursor = document.querySelector('.cursor');
+      //e.pageX & e.pageY returns the location of the cursor in the screen
+      cursor.setAttribute("style", "top:" + (event.pageY - 10) +"px; left:" + (event.pageX - 10) +"px;");  
+    } 
+  },
+
+  mounted(){
+    document.addEventListener("mousemove", this.moveCursor);
   }
 };
 </script>
