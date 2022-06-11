@@ -1,141 +1,79 @@
 <template>
   <v-container>
-      <v-row class="mt-4">
-        <v-col  
-          style="height: 276px; width:276px; min-height:276px; min-width:276px;">
-          
-          <v-hover >
-            <v-card  
-              class="fill-height d-flex flex-column  " 
-              style="background-color:#CCAB87;"> 
-              <v-spacer></v-spacer> 
-              <v-card-actions >
-                <v-btn icon right > 
-                  <v-icon  >mdi-github</v-icon>
-                </v-btn>
-              </v-card-actions>
-            </v-card>
-          </v-hover>
-        </v-col>
+    <v-slide-group center-active style="width: 100%;">   
+        
+        
+        <v-slide-item v-for="proyect in proyects" :key="proyect.name"  style="width: 500px;  " class="ma-5"> 
+          <v-card  
+            class="pa-3"  
+            style="border-radius:10px;" 
+          > 
+            <v-img 
+              :src= "require(`@/assets/illustrations/${proyect.image}`)" 
+              eager 
+              style="border-radius:10px;"
+            ></v-img>
+          <v-card-text>
+            <v-chip-group
+              v-model="selection"
+              active-class="deep-purple accent-4 white--text"
+              column
+            >
+              <v-chip v-for="tech in proyect.technologies" :key="tech.name">
+                {{tech.name }}   
+              </v-chip>  
+            </v-chip-group>
+          </v-card-text>
 
-        <v-col 
-          class="pb-0" 
-          style="height: 276px; width:276px; min-height:276px; min-width:276px;">
-
-          <v-row style="height: 50%">
-            <v-col class="ma-0">
-              <v-card 
-                class="fill-height d-flex flex-column"
-                style="background-color:#00E0E0"> 
-                <v-spacer></v-spacer>
-                <v-card-actions >
-                  <v-btn icon right> 
-                    <v-icon>mdi-github</v-icon>
-                  </v-btn>
-                </v-card-actions>
-              </v-card>
-            </v-col>
-          </v-row>
-
-          <v-row style="height: 50%; margin-top: 12px">
-            <v-col class="ma-0 pb-0 ">
-              <v-card 
-                class="fill-height  d-flex flex-column"
-                style="background-color:#E8E8E8;">   
-                <v-spacer></v-spacer>
-                <v-card-actions >
-                  <v-btn icon right> 
-                    <v-icon>mdi-github</v-icon>
-                  </v-btn>
-                </v-card-actions>  
-              </v-card>
-            </v-col>
-
-            <v-col class="ma-0 pb-0">
-              <v-card 
-                class="fill-height  d-flex flex-column"
-                style="background-color:#E8E8E8;">   
-                <v-spacer></v-spacer>
-                <v-card-actions >
-                  <v-btn icon right> 
-                    <v-icon>mdi-github</v-icon>
-                  </v-btn>
-                </v-card-actions>  
-              </v-card>
-            </v-col>
-          </v-row>
-        </v-col>
-
-        <v-col  
-          style="height: 276px; width:276px; min-height:276px; min-width:276px;">
-          
-          <v-card 
-            class="fill-height d-flex flex-column" 
-            style="background-color:#CCAB87;">  
-            <v-spacer></v-spacer>
             <v-card-actions >
-              <v-btn icon right> 
-                <v-icon>mdi-github</v-icon>
+              <v-btn icon right > 
+                <v-icon  >mdi-github</v-icon>
               </v-btn>
             </v-card-actions>
           </v-card>
-        </v-col>
-
-        <v-col 
-          class="pb-0" 
-          style="height: 276px; width:276px; min-height:276px; min-width:276px;">
-
-          <v-row style="height: 50%">
-            <v-col class="ma-0">
-              <v-card 
-                class="fill-height d-flex flex-column"
-                style="background-color:#00E0E0"> 
-                <v-spacer></v-spacer>
-                <v-card-actions >
-                  <v-btn icon right> 
-                    <v-icon>mdi-github</v-icon>
-                  </v-btn>
-                </v-card-actions>
-              </v-card>
-            </v-col>
-          </v-row>
-
-          <v-row style="height: 50%; margin-top: 12px">
-            <v-col class="ma-0 pb-0 ">
-              <v-card 
-                class="fill-height  d-flex flex-column"
-                style="background-color:#E8E8E8;">   
-                <v-spacer></v-spacer>
-                <v-card-actions >
-                  <v-btn icon right> 
-                    <v-icon>mdi-github</v-icon>
-                  </v-btn>
-                </v-card-actions>  
-              </v-card>
-            </v-col>
-
-            <v-col class="ma-0 pb-0">
-              <v-card 
-                class="fill-height  d-flex flex-column"
-                style="background-color:#E8E8E8;">   
-                <v-spacer></v-spacer>
-                <v-card-actions >
-                  <v-btn icon right> 
-                    <v-icon>mdi-github</v-icon>
-                  </v-btn>
-                </v-card-actions>  
-              </v-card>
-            </v-col>
-          </v-row>
-        </v-col>
-      </v-row>
- 
+        
+        </v-slide-item> 
+         
+ </v-slide-group>
   </v-container>
 </template>
 
 <script>
 export default {
-  name: "ProjectsComponent"
+  name: "ProjectsComponent",
+
+  data(){
+    return{
+      proyects: [
+        {
+          name: "Logo design",
+          image: 'Logotypes.jpg',
+          technologies: [ 
+            {name : "Illustrator"}
+          ] 
+        },
+        {
+          name: "osso brand",
+          image: 'Inspiration.jpg',
+          technologies: [
+            {name : "VueJS"},
+            {name : "JavaScript"},
+            {name : "HTML"},
+            {name : "CSS"}
+          ]
+        },
+        {
+          name: "API REST forum",
+          image: 'Weare.jpg',
+          technologies: [
+            {name : "NodeJS"},
+            {name : "Express"}
+          ]
+        }
+
+      ]
+    }
+  }
 }
 </script>
 
