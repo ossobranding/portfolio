@@ -1,5 +1,24 @@
 <template>
     <v-container>
+        <!--BACKEND-->
+        <v-row justify="center" >
+            <v-col 
+            v-for="skill in skillsBACK" :key="skill.titulo " eager
+            cols="1"  
+            align-self="center"  
+            style="min-width:75px; ">
+            <v-img
+                class=" mb-3 anim"
+                width="100%"
+                contain
+                aspect-ratio="1"
+                :src= "require(`@/assets/logos/${skill.fichero}`)" 
+                eager 
+            ></v-img>
+            <h5 class="mt-1" style="wdth:100%;text-align:center;">{{skill.titulo}}</h5>
+            </v-col> 
+        </v-row>
+
         <!--FRONTEND-->
         <v-row justify="center" class="mt-4">
             <v-col 
@@ -9,8 +28,8 @@
             style="min-width:75px;">
             
                 <v-img
-                class="mx-auto anim"
-                width="75%"
+                class=" mb-3  anim"
+                width="100%"
                 contain
                 aspect-ratio="1"
                 :src= "require(`@/assets/logos/${skill.fichero}`)"  
@@ -20,24 +39,27 @@
             </v-col> 
         </v-row>
 
-        <!--BACKEND-->
-        <v-row justify="center" >
+        <!--DESIGN-->
+        <v-row justify="center" class="mt-4">
             <v-col 
-            v-for="skill in skillsBACK" :key="skill.titulo " eager
-            cols="1"  
+            v-for="skill in skillsDESIGN" :key="skill.titulo"
+            cols="1" 
             align-self="center"  
             style="min-width:75px;">
-            <v-img
-                class="mx-auto anim"
-                width="75%"
+            
+                <v-img
+                class=" mb-3  anim"
+                width="100%"
                 contain
                 aspect-ratio="1"
-                :src= "require(`@/assets/logos/${skill.fichero}`)" 
-                eager 
-            ></v-img>
+                :src= "require(`@/assets/logos/${skill.fichero}`)"  
+                ></v-img>
+             
             <h5 class="mt-1" style="wdth:100%;text-align:center;">{{skill.titulo}}</h5>
             </v-col> 
         </v-row>
+
+        
     </v-container> 
 </template>
 
@@ -63,61 +85,64 @@ export default {
 
     data() {
         return {
-        BASE_URL: process.env.BASE_URL, 
+            BASE_URL: process.env.BASE_URL, 
 
-        skillsFRONT:[
-            {
-            titulo: 'HTML5',
-            fichero:  'html5.svg'
-            },
-            {
-            titulo: 'CSS3',
-            fichero:  'css3.svg'
-            },
-            {
-            titulo: 'JavaScript',
-            fichero:  'javascript.svg'
-            },
-            {
-            titulo: 'Laravel',
-            fichero:  'laravel.svg'
-            },
-            {
-            titulo: 'Vue',
-            fichero:  'vuejs.svg'
-            },
-            {
-            titulo: 'Photoshop',
-            fichero:  'photoshop.svg'
-            },
-            {
-            titulo: 'Illustrator',
-            fichero:  'illustrator.svg'
-            }, 
-        ],
+            skillsBACK:[
+                {
+                titulo: 'Java',
+                fichero:  'java.svg'
+                },
+                {
+                titulo: 'C++',
+                fichero:  'cpp.svg'
+                },
+                {
+                titulo:'NodeJS',
+                fichero: 'nodejs.svg'
+                },
+                {
+                titulo:'MySQL',
+                fichero: 'mysql.svg'
+                },
+                {
+                titulo:'mongoDB',
+                fichero: 'mongodb.svg'
+                } 
+            ], 
+            
+            skillsFRONT:[
+                {
+                titulo: 'HTML5',
+                fichero:  'html5.svg'
+                },
+                {
+                titulo: 'CSS3',
+                fichero:  'css3.svg'
+                },
+                {
+                titulo: 'ES6',
+                fichero:  'javascript.svg'
+                },
+                {
+                titulo: 'Laravel',
+                fichero:  'laravel.svg'
+                },
+                {
+                titulo: 'Vue',
+                fichero:  'vuejs.svg'
+                }  
+            ],
 
-        skillsBACK:[
-            {
-            titulo: 'Java',
-            fichero:  'java.svg'
-            },
-            {
-            titulo: 'C++',
-            fichero:  'cpp.svg'
-            },
-            {
-            titulo:'NodeJS',
-            fichero: 'nodejs.svg'
-            },
-            {
-            titulo:'MySQL',
-            fichero: 'mysql.svg'
-            },
-            {
-            titulo:'mongoDB',
-            fichero: 'mongodb.svg'
-            } 
-        ],  
+            skillsDESIGN : [
+                {
+                titulo: 'Photoshop',
+                fichero:  'photoshop.svg'
+                },
+                {
+                titulo: 'Illustrator',
+                fichero:  'illustrator.svg'
+                }, 
+            ] 
         };
     },
 };
