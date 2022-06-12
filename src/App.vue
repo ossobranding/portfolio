@@ -1,14 +1,17 @@
 <template > 
-   <v-app >
+   <v-app  class="app ">
      <div class="cursor">
      </div>
-     <v-main id="main">
+    
        <landing-page></landing-page>
-      
+      <h1  style="font-family: Emberly; font-size: 10vw; padding: 20px; text-align: center;  opacity: 0.8 ;">Sobre mi</h1>
+       <about-component></about-component>   
+      <h1  style="font-family: Emberly; font-size: 10vw; padding: 20px; text-align: center;  opacity: 0.8 ;">Conocimientos</h1>
        <skills-component></skills-component> 
+       <h1  style="font-family: Emberly; font-size: 10vw; padding: 20px; text-align: center;  ">Proyectos</h1>
        <projects-component></projects-component>
        <footer-component></footer-component>
-     </v-main>
+    
 
     
    
@@ -32,7 +35,10 @@
     src: local("Rubik-Light"), 
           url(./fonts/Rubik-Light.ttf) format("truetype");        
   }
- 
+  
+  .app{
+    font-family:Rubik-Regular;
+  }
 
   .cursor{
     width: 30px;
@@ -47,7 +53,7 @@
 <script>
 
 import LandingPage from './components/LandingPage.vue'
- 
+import AboutComponent from './components/AboutComponent.vue'
 import SkillsComponent from './components/SkillsComponent.vue' 
 import ProjectsComponent from './components/ProyectsComponent.vue'
 import FooterComponent from './components/FooterComponent.vue'
@@ -57,7 +63,7 @@ export default {
   name: "App",
 
   components:{
-     LandingPage,  SkillsComponent, ProjectsComponent, FooterComponent
+     LandingPage,  AboutComponent, SkillsComponent, ProjectsComponent, FooterComponent
   },
 
   data() {
