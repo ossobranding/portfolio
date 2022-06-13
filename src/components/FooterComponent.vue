@@ -2,11 +2,10 @@
     <v-container>
         <v-footer width="100%" class="footer" >
             <v-row  style="width:100%; justify-content:center; "  class="pa-5 ">
-                <a class="px-3" style="color:grey">Sobre mi</a>
-                <a class="px-3" style="color:grey">Proyectos</a>
-                <a class="px-3" style="color:grey"> Conocimientos</a>
-                <a class="px-3" style="color:grey">Habilidades</a>
-                <a class="px-3" style="color:grey">Contacto</a>
+                <a class="px-3" style="color:grey" v-on:click="scrollToElement({behavior: 'smooth'} , 'about')">Sobre mi</a>
+                <a class="px-3" style="color:grey" v-on:click="scrollToElement({behavior: 'smooth'} , 'skills')">Conocimientos</a>
+                <a class="px-3" style="color:grey" v-on:click="scrollToElement({behavior: 'smooth'} , 'projects')"> Proyectos</a> 
+                <a class="px-3" style="color:grey" v-on:click="scrollToElement({behavior: 'smooth'} , 'contact')">Contacto</a>
             </v-row>
 
             <v-btn icon v-for="red in rrss" :key="red.titulo"  
@@ -31,6 +30,17 @@
 
 <script>
 export default {
+
+    methods: {  
+        scrollToElement(options, focus) {
+            const el = document.getElementsByClassName(focus)[0]; 
+            console.log("VAMOS A HACER SCROLL A " + el )
+            if (el) {
+                el.scrollIntoView(options);
+            }
+        }  
+    },
+
     data() {
         return { 
             rrss:[

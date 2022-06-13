@@ -33,7 +33,7 @@
     }
 </script>
 
-<style>
+<style >
     .landing-container { 
         height:100vh;
         width: 100%;   

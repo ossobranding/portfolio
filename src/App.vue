@@ -4,12 +4,17 @@
      </div>
     
       <landing-page></landing-page>
-      <h1  style="font-family: Emberly; font-size: 10vw; padding: 20px; text-align: center;  opacity: 0.8 ;">Sobre mi</h1>
-      <about-component></about-component>   
-      <h1  style="font-family: Emberly; font-size: 10vw; padding: 20px; text-align: center;  opacity: 0.8 ;">Conocimientos</h1>
+
+      <h1 class="custom-header about">Sobre mi</h1>
+      <about-component></about-component>  
+
+      <h1 class="custom-header skills">Conocimientos</h1>
       <skills-component></skills-component> 
- 
+
+      <h1 class="custom-header projects"> Projectos</h1>
       <projects-component></projects-component>
+
+      <h1 class="custom-header contact">Contacto</h1>
       <footer-component></footer-component>
     
 
@@ -43,13 +48,21 @@
   .cursor{
     width: 30px;
     height: 30px;
-    border: 1px solid #606887;
+    border: 3px solid #606887;
     border-radius: 50%;
     position: absolute;
     z-index: 1;
     pointer-events: none;
    
   } 
+
+  .custom-header{
+    font-family: Emberly; 
+    font-size: 10vw; 
+    padding: 20px; 
+    text-align: center;  
+    opacity: 0.8 ;
+  }
 </style> 
 
 <script>
@@ -77,8 +90,8 @@ export default {
     moveCursor(event) { 
       var cursor = document.querySelector('.cursor');
       //e.pageX & e.pageY returns the location of the cursor in the screen
-      cursor.setAttribute("style", "top:" + (event.pageY - 12) +"px; left:" + (event.pageX - 12) +"px;");  
-    } 
+      cursor.setAttribute("style", "top:" + (event.pageY - 15) +"px; left:" + (event.pageX - 15) +"px;");  
+    }
   },
 
   mounted(){

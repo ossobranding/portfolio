@@ -1,9 +1,12 @@
 <template>
-    <v-container>
+     
       <v-row class="mt-4">
         <v-col  xs= "12" sm="12" lg="6" md="6" >
+          <v-parallax >
             <v-img  src= "../assets/images/1.jpg" eager> 
             </v-img> 
+          </v-parallax>
+            
         </v-col>
 
         <v-col lg12 md12>
@@ -25,7 +28,7 @@
             <v-btn class="pa-5" style="background-color:#00E0E0">
               <v-icon > mdi-file-document-outline </v-icon> 
               <a  style="text-decoration:none;color:black;" class="ml-2"
-                 :href=  " '/files/CV.pdf' "  download = "CV.pdf"
+                 :href=  " '/files/CV.pdf' "   download = "CV.pdf"
               >
                   VER CURRICULUM
               </a>
@@ -33,7 +36,7 @@
           </v-row>
         </v-col>
       </v-row>
-    </v-container>
+     
 </template>
 
 <script> 

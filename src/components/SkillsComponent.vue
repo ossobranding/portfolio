@@ -65,12 +65,12 @@
 
 <style scoped> 
     .anim {
-        filter: grayscale(100%); 
+        filter: grayscale(40%);  
     }
 
-  .anim:hover{
-      animation: bounce 2s infinite; 
-      filter: grayscale(0%);  
+    .anim:hover{
+        animation: bounce 2s infinite; 
+        filter: grayscale( 0%);   
     }
 
   @keyframes bounce { 

@@ -80,7 +80,7 @@
  
 </template>
 
-<style >
+<style scoped>
   .works{ 
     margin: 12px 12px 12px 12px;
   }
@@ -94,8 +94,7 @@
     padding: 15px 15px 15px 15px;
     border-radius:10px !important; 
   } 
- 
-
+  
   .project-image{
     min-height: 370px;
     max-height: 370px;
@@ -109,7 +108,7 @@
 
   .project-title{ 
     padding: 5px 5px 5px 20px !important;
-    font-size: 30px !important;
+    font-size: 40px !important;
     font-weight: bold !important;
   }
 
@@ -178,7 +177,7 @@ export default {
         },
         {
           name: "Forum API",
-          description: "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaa a aa a a a aaa",
+          description: "Servicio web para gestión de la lógica de negocio de un foro y sus usuarios",
           image: 'Weare.jpg',
           state: 'In process', 
           selected: false, 
