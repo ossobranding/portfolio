@@ -1,31 +1,30 @@
 <template> 
 
-  <v-slide-group
-    v-model="model"
-    class="pa-4"
-    center-active
-    show-arrows
-  >
-    <v-slide-item
+  <v-row
+    class="works"
+    >
+    <v-col
       class="project-slot"
+      
       v-for="proyect in proyects" 
       :key="proyect.name"  
-      v-slot="{ active, toggle }"
- 
-    >
-      <v-card 
-        class="project-card d-flex flex-column "   
-        @click="toggle"
+      :id="proyect.name" 
+      >  
+      
+      <v-card  
+        @click="proyect.selected = !proyect.selected" 
+        :ripple="false" 
+        class="project-card d-flex flex-column " 
       >
         <v-img 
-          :src= "require(`@/assets/illustrations/${proyect.image}`)" 
-          eager 
-          style="border-radius:10px;"
+          :src= "require(`@/assets/illustrations/${proyect.image}`)"  
+          :class=" ['project-image', {'project-image-blur' : !proyect.selected}]"  
         ></v-img>
         
         <v-card-title class="project-title">{{proyect.name}}</v-card-title>
         <v-card-text>
           <v-chip-group  
+            class="project-tags"
             column
           >
             <v-chip v-for="tech in proyect.technologies" :key="tech.name">
@@ -38,40 +37,37 @@
         <v-spacer></v-spacer>
 
         <v-card-actions>
- <v-btn 
-          class="source-code-button"
-          depressed
-           
-          v-if="active"
+          <v-btn 
+            class="source-code-button"
+            depressed 
+            v-if="proyect.selected"
             > 
-          <v-icon  light>mdi-code-tags</v-icon>
-        </v-btn>
+            <v-icon  light>mdi-code-tags</v-icon>
+          </v-btn>
 
-        <v-btn 
-          class="source-code-button "
-          v-if="!active"
-            depressed disabled> 
-          <v-icon  light >mdi-code-tags</v-icon>
-        </v-btn> 
+          <v-btn 
+            class="source-code-button "
+            v-if="!proyect.selected "
+              depressed disabled
+            > 
+            <v-icon  light >mdi-code-tags</v-icon>
+          </v-btn> 
 
         <v-btn  class="state-button"   color="warning">Hola</v-btn>
-        </v-card-actions>
-       
-        
+        </v-card-actions> 
       </v-card>
+    </v-col>
+  </v-row>
 
-    </v-slide-item>
-  </v-slide-group>
-
+   
     
 
  
 </template>
 
 <style >
-  .works{
-    justify-content: center;
-    align-items: center;
+  .works{ 
+    margin: 12px 12px 12px 12px;
   }
 
   .project-slot{
@@ -82,14 +78,35 @@
     margin: 20px 20px 20px 20px;
     padding: 15px 15px 15px 15px;
     border-radius:10px !important; 
+  } 
+ 
+
+  .project-image{
+    min-height: 370px;
+    max-height: 370px;
+    border-radius:10px;
+    transition: 0.5s filter linear;
   }
 
-  .project-title{
+  .project-image-blur{ 
+    filter: blur(40px);
+  }
+
+  .project-title{ 
     padding: 5px 5px 5px 20px !important;
     font-size: 30px !important;
     font-weight: bold !important;
   }
+
+  .project-tags{
+    margin-top: 5px;
+    margin-bottom:15px;
+  }
   
+  .project-description{
+    font-size: 20px !important;
+  }
+
   .state-button{
     width: 80%;
   }
@@ -98,24 +115,28 @@
 <script>
 export default {
   name: "ProjectsComponent",
+  
+   
 
   data(){
     return{
       proyects: [
         {
           name: "Logo design",
-          description: "Recopilación de logotipos propios ",
+          description: "Portfolio de logotipos propios enfocados a la digitalización de empresas",
           image: 'Logotypes.jpg',
-          state: 'In process', 
+          state: 'In process',
+          selected: false, 
           technologies: [ 
             {name : "Illustrator"}
           ] 
         },
         {
-          name: "OSSO brand",
-          description: "Diseño y desarrollo de mi marca personal",
+          name: "OSSO",
+          description: "Proyecto de branding para mi marca personal y desarrollo de la web",
           image: 'Inspiration.jpg',
           state: 'In process', 
+          selected: false, 
           technologies: [
             {name : "VueJS"},
             {name : "JavaScript"},
@@ -124,44 +145,29 @@ export default {
           ]
         },
         {
-          name: "brind.design's web",
-          description: "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaa a aa a a a aaa",
+          name: "brind.design" ,
+          description: "Colaboración con @brind.design para el desarrollo  de su web como diseñador gráfico",
           image: 'Inspiration.jpg',
           state: 'In process', 
+          selected: false, 
           technologies: [
-            {name : "NodeJS"},
-            {name : "Express"},
-            {name : "JWT"} ,
+            {name : "NodeJS"},  
             {name : "mongoDB"},
             {name : "API REST"}
           ]
         },
         {
-          name: "SSL sockets",
+          name: "Forum API",
           description: "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaa a aa a a a aaa",
           image: 'Weare.jpg',
           state: 'In process', 
-          technologies: [
-            {name : "SSL"},
-            {name : "Express"},
-            {name : "JWT"} ,
+          selected: false, 
+          technologies: [ 
+            {name : "NodeJS"}, 
             {name : "mongoDB"},
             {name : "API REST"}
           ]
-        },
-        {
-          name: "SS1 sockets",
-          description: "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaa a aa a a a aaa",
-          image: 'Weare.jpg',
-          state: 'Visit it!', 
-          technologies: [
-            {name : "SSL"},
-            {name : "Express"},
-            {name : "JWT"} ,
-            {name : "mongoDB"},
-            {name : "API REST"}
-          ]
-        }
+        } 
       ]
     }
   }

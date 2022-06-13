@@ -3,6 +3,7 @@
       <div id="content">
         
         <vue-typer  
+            class = "typer"
             :text='[ "OSCAR CASADO", "OSSO"]'
             :repeat='Infinity'
             :shuffle='false'
@@ -39,14 +40,26 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        background-color: blue;
+        background-color: #E8E8E8;
+    }
+
+    .typer{
+        height: 20vw;
+        min-height: 20vw;
+        display: inline-block;
+        text-align: center;
+        width: 100%;
+    }
+
+    .custom.caret{
+       display: none;
     }
 
     .introduction {
         text-align: center; 
     } 
 
-    .name-intro, .brand-intro {
+    .custom.char {
         -webkit-text-stroke: 2px #606887;
         font-size: 5vw;
         color: transparent; 

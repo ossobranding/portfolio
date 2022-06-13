@@ -1,6 +1,6 @@
 <template>
     <v-container>
-        <v-footer width="100%" style="justify-content:center; color:grey;" class="mt-4">
+        <v-footer width="100%" class="footer" >
             <v-row  style="width:100%; justify-content:center; "  class="pa-5 ">
                 <a class="px-3" style="color:grey">Sobre mi</a>
                 <a class="px-3" style="color:grey">Proyectos</a>
@@ -21,7 +21,13 @@
     </v-container>
 </template> 
 
- 
+<style scoped>
+    .footer{
+        justify-content:center; 
+        color:grey;
+        background-color: transparent;
+    }
+</style> 
 
 <script>
 export default {
@@ -49,6 +55,4 @@ export default {
 }
 </script>
 
-<style>
-
-</style>
+ 

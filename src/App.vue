@@ -8,7 +8,7 @@
        <about-component></about-component>   
       <h1  style="font-family: Emberly; font-size: 10vw; padding: 20px; text-align: center;  opacity: 0.8 ;">Conocimientos</h1>
        <skills-component></skills-component> 
-       <h1  style="font-family: Emberly; font-size: 10vw; padding: 20px; text-align: center;  ">Proyectos</h1>
+ 
        <projects-component></projects-component>
        <footer-component></footer-component>
     
@@ -46,6 +46,8 @@
     border: 1px solid #606887;
     border-radius: 50%;
     position: absolute;
+    z-index: 1;
+    pointer-events: none;
    
   } 
 </style> 

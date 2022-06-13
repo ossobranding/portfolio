@@ -1,24 +1,9 @@
 <template>
     <v-container>
       <v-row class="mt-4">
-        <v-col sm="12" lg="6" md="6" >
-          <v-carousel 
-            cycle
-            show-arrows-on-hover
-            hide-delimiter-background
-            style="border-radius:5px;"
-          >
-            <v-carousel-item v-for="fotografia in fotografias" :key="fotografia.id" eager>
-              <v-row
-                class="fill-height"
-                align="center"
-                justify="center"
-              >
-                  <v-img :src= "require(`@/assets/images/${fotografia.fichero}`)" eager> 
-                  </v-img> 
-              </v-row>
-            </v-carousel-item>
-          </v-carousel>
+        <v-col  xs= "12" sm="12" lg="6" md="6" >
+            <v-img  src= "../assets/images/1.jpg" eager> 
+            </v-img> 
         </v-col>
 
         <v-col lg12 md12>
@@ -28,22 +13,7 @@
             Oscar Casado Lorenzo
           </h2>
 
-          <h3 style="font-size:35px; color:#CCAB87; text-align:center;">
-            <vue-typer
-              :text='["Desarrollador FullStack", "Diseñador gráfico"]'
-              :repeat='Infinity'
-              :shuffle='false'
-              initial-action='typing'
-              :pre-type-delay='70'
-              :type-delay='70'
-              :pre-erase-delay='5000'
-              :erase-delay='250'
-              erase-style='select-all'
-              :erase-on-complete='false'
-              caret-animation='blink'
- 
-            ></vue-typer>
-          </h3>
+           
  
          
           <h4 class="mt-3"  style='font-family:"Rubik-Light";font-size:20px; color:grey; text-align:justify;'>  
@@ -66,15 +36,10 @@
     </v-container>
 </template>
 
-<script>
-import {VueTyper} from 'vue-typer'
+<script> 
 
 export default {
-    name: "AboutComponent",
-
-    components:{
-        VueTyper 
-    },
+    name: "AboutComponent", 
 
     data (){
         return {
