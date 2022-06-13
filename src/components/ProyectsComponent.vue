@@ -18,7 +18,8 @@
       >
         <v-img 
           :src= "require(`@/assets/illustrations/${proyect.image}`)"  
-          :class=" ['project-image', {'project-image-blur' : !proyect.selected}]"  
+          :class=" ['project-image', {'project-image-blur' : !proyect.selected}]"
+          eager  
         ></v-img>
         
         <v-card-title class="project-title">{{proyect.name}}</v-card-title>
@@ -39,21 +40,35 @@
         <v-card-actions>
           <v-btn 
             class="source-code-button"
-            depressed 
-            v-if="proyect.selected"
+            depressed  
+            v-if="proyect.selected == true"
             > 
             <v-icon  light>mdi-code-tags</v-icon>
           </v-btn>
 
           <v-btn 
-            class="source-code-button "
+            class="source-code-button  button-disabled "
             v-if="!proyect.selected "
               depressed disabled
             > 
-            <v-icon  light >mdi-code-tags</v-icon>
+            <v-icon light >mdi-code-tags</v-icon>
           </v-btn> 
 
-        <v-btn  class="state-button"   color="warning">Hola</v-btn>
+          <v-btn  
+            class="state-button button-disabled"
+            v-if="!proyect.selected "
+            color="warning"
+            >
+              ?
+          </v-btn>
+
+          <v-btn  
+            class="state-button "
+            v-if="proyect.selected "
+            color="warning"
+            >
+              Hola
+          </v-btn>
         </v-card-actions> 
       </v-card>
     </v-col>
@@ -105,6 +120,11 @@
   
   .project-description{
     font-size: 20px !important;
+  }
+
+  .button-disabled{
+    opacity: 0.5;
+    transition: 0.5s opacity linear;
   }
 
   .state-button{
