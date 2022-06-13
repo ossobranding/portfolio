@@ -15,6 +15,8 @@
       <projects-component></projects-component>
 
       <h1 class="custom-header contact">Contacto</h1>
+      <contact-component></contact-component>
+
       <footer-component></footer-component>
     
 
@@ -71,6 +73,7 @@ import LandingPage from './components/LandingPage.vue'
 import AboutComponent from './components/AboutComponent.vue'
 import SkillsComponent from './components/SkillsComponent.vue' 
 import ProjectsComponent from './components/ProyectsComponent.vue'
+import ContactComponent from './components/ContactComponent.vue'
 import FooterComponent from './components/FooterComponent.vue'
 
 
@@ -78,7 +81,7 @@ export default {
   name: "App",
 
   components:{
-     LandingPage,  AboutComponent, SkillsComponent, ProjectsComponent, FooterComponent
+     LandingPage,  AboutComponent, SkillsComponent, ProjectsComponent, ContactComponent, FooterComponent
   },
 
   data() {

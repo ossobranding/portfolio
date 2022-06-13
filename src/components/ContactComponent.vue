@@ -1,19 +1,34 @@
 <template>
   <v-container>
     <v-row justify="center" class="mt-4">
-    <v-form>
-        <v-text-field outlined single-line label="Correo electrónico" placeholder="jhon@gmail.com"></v-text-field>
-        <v-text-field outlined single-line label="Asunto" ></v-text-field>
-        <v-text-field outlined single-line label="Escribe aquí tu mensaje"></v-text-field>
-        <v-btn>Enviar</v-btn>
-    </v-form>
+      <form ref="form" @submit.prevent="sendEmail">
+        <label>Name</label>
+        <input type="text" name="user_name">
+        <label>Email</label>
+        <input type="email" name="user_email">
+        <label>Message</label>
+        <textarea name="message"></textarea>
+        <input type="submit" value="Send">
+    </form>
     </v-row>
   </v-container>
 </template>
 
 <script>
-export default {
+import emailjs from '@emailjs/browser';
+import config from '../../config.js';
 
+export default {
+  methods: {
+    sendEmail() {
+      emailjs.sendForm( config.EMAILJS_SERVICE_ID , config.EMAILJS_TEMPLATE_ID , this.$refs.form, config.EMAILJS_PUBLIC_KEY)
+        .then((result) => {
+            console.log('SUCCESS!', result.text);
+        }, (error) => {
+            console.log('FAILED...', error.text);
+        });
+    }
+  }
 }
 </script>
 
