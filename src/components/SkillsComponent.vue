@@ -1,5 +1,5 @@
 <template>
-    <v-container>
+    <div>
         <!--BACKEND-->
         <v-row justify="center" >
             <v-col 
@@ -58,15 +58,19 @@
             <h5 class="mt-1" style="wdth:100%;text-align:center;">{{skill.titulo}}</h5>
             </v-col> 
         </v-row>
-
+    </div>
         
-    </v-container> 
+ 
 </template>
 
-<style scoped>
+<style scoped> 
+    .anim {
+        filter: grayscale(100%); 
+    }
 
   .anim:hover{
-      animation: bounce 1.5s infinite;   
+      animation: bounce 2s infinite; 
+      filter: grayscale(0%);  
     }
 
   @keyframes bounce { 

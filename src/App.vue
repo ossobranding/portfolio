@@ -3,14 +3,14 @@
      <div class="cursor">
      </div>
     
-       <landing-page></landing-page>
+      <landing-page></landing-page>
       <h1  style="font-family: Emberly; font-size: 10vw; padding: 20px; text-align: center;  opacity: 0.8 ;">Sobre mi</h1>
-       <about-component></about-component>   
+      <about-component></about-component>   
       <h1  style="font-family: Emberly; font-size: 10vw; padding: 20px; text-align: center;  opacity: 0.8 ;">Conocimientos</h1>
-       <skills-component></skills-component> 
+      <skills-component></skills-component> 
  
-       <projects-component></projects-component>
-       <footer-component></footer-component>
+      <projects-component></projects-component>
+      <footer-component></footer-component>
     
 
     
