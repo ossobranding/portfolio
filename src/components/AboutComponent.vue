@@ -46,8 +46,8 @@
     font-size:50px;  
     font-weight:bold; 
     text-align:center; 
-    
-    text-decoration: underline 0.05em rgba(255, 255, 255, 0);
+
+    text-decoration: underline 0.1em rgba(255, 255, 255, 0);
     transition: text-decoration-color 300ms;
   }
 

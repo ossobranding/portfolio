@@ -18,7 +18,7 @@
       >
         <v-img 
           :src= "require(`@/assets/illustrations/${proyect.image}`)"  
-          :class=" ['project-image', {'project-image-blur' : !proyect.selected}]"
+          :class=" ['project-image' , {'project-image-blur' :  !proyect.selected}]"
           eager  
         ></v-img>
         
@@ -98,12 +98,16 @@
   .project-image{
     min-height: 370px;
     max-height: 370px;
-    border-radius:10px;
-    transition: 0.5s filter linear;
+    border-radius:10px; 
   }
 
-  .project-image-blur{ 
-    filter: blur(40px);
+  .project-image-blur{
+    filter: blur(20px);
+    transition: 0.5s filter linear; 
+  }
+
+  .project-image:hover{ 
+    filter: blur(0px);
   }
 
   .project-title{ 
