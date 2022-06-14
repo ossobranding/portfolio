@@ -4,7 +4,7 @@
      </div>
     
       <landing-page></landing-page>
-      <h1 style="position: sticky; top:20px; margin-left:40px; margin-top: 20px; ">OSSO</h1>
+      <h1 style="position: sticky; top:20px; margin-left:40px; margin-top: 20px; z-index: 1;">OSSO</h1>
       <h1 class="custom-header about">About me</h1>
       <about-component></about-component>  
 
