@@ -1,28 +1,56 @@
 <template>
  
   <v-row justify="center" sty class="mt-4">
-
+ 
     <v-col xs= "12" sm="12" lg="4" md="4" >
-      <h1>OR CONNECT WITH ME ON SOCIALS</h1> 
-    </v-col>
-
-    <v-col xs= "12" sm="12" lg="4" md="4" >
-      <form ref="form" class="contact-container" @submit.prevent="sendEmail"> 
+      <form 
+        ref="form" 
+        class="contact-container" 
+        @submit.prevent="sendEmail"> 
+        
         <div id="contact-name-input" class="input-container column">
-          <label>Name:</label>
-          <input id="contact-name-input-field" class="input-field" name="user_name" > 
+          <label>Name:
+            <span class="input-error" v-if="!nameIsValid && this.checkFormErrors">Please enter your name</span> 
+          </label> 
+          <input
+            id="contact-name-input-field" 
+            class="input-field"  
+            name="user_name" 
+            v-model="form.name"
+            > 
         </div>
+
         <div id="contact-email-input" class="input-container column">
-          <label>Email:</label>
-          <input id="contact-name-input-field" class="input-field" name="user_email" > 
+          <label >Email:
+            <span class="input-error" v-if="!emailIsValid && this.checkFormErrors">Please enter a valid email address</span> 
+          </label> 
+          <input 
+            id="contact-name-input-field" 
+            class="input-field" 
+            name="user_email" 
+            v-model="form.email"
+            > 
         </div>
         <label class="spam-advertisement">
             <v-icon color="grey">mdi-lock-check</v-icon>
             I won't send you spam 
         </label>
-        <div id="contact-message-input" class="input-container column">
-          <label>Message:</label>
-          <textarea id="contact-message-input-field" class="input-field" name="message"  rows="8"> </textarea>
+
+        <div 
+          id="contact-message-input" 
+          class="input-container column" 
+          >
+          <label>Message:
+            <span class="input-error" v-if="!msgIsValid && this.checkFormErrors">Please enter a valid email address</span> 
+          </label> 
+          
+          <textarea 
+            id="contact-message-input-field" 
+            class="input-field" 
+            name="message"
+            v-model="form.msg"  
+            rows="8"> 
+          </textarea>
         </div> 
 
           <v-card-actions class="networks-container"> 
@@ -71,6 +99,10 @@
     border: 2px solid #F5F5F5;
   }
 
+  .input-error{
+    color: red; 
+  }
+
   .input-field{
     outline: none;
   }
@@ -117,22 +149,51 @@
 
 <script>
 import emailjs from '@emailjs/browser';
-import config from '../../config.js';
+import config from '../../config.js'; 
 
-export default {
-  methods: {
-    sendEmail() {
-      emailjs.sendForm( config.EMAILJS_SERVICE_ID , config.EMAILJS_TEMPLATE_ID , this.$refs.form, config.EMAILJS_PUBLIC_KEY)
+export default {  
+  methods: { 
+
+    sendEmail() { 
+      this.checkFormErrors = true;
+
+      if(this.nameIsValid && this.emailIsValid && this.msgIsValid){
+        emailjs.sendForm( config.EMAILJS_SERVICE_ID , config.EMAILJS_TEMPLATE_ID , this.$refs.form, config.EMAILJS_PUBLIC_KEY)
         .then((result) => {
             console.log('SUCCESS!', result.text);
         }, (error) => {
             console.log('FAILED...', error.text);
         });
+      } 
     }
+  },
+
+  computed:{
+    nameIsValid(){
+      return !!this.form.name && this.form.name.length > 3;
+    },
+
+    emailIsValid(){
+      var regularExpr = /\S+@\S+\.\S+/;   
+      return regularExpr.test(String(this.form.email).toLowerCase());
+    },
+
+    msgIsValid(){
+      return !!this.form.msg
+    },
+ 
   },
 
   data() {
     return { 
+      checkFormErrors : false,
+
+      form: {
+        name: null,
+        email: null,
+        msg: null
+      },
+
       rrss:[
         {
           titulo: 'Linkedin',
