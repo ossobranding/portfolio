@@ -1,7 +1,12 @@
 <template>
-  <v-container>
+ 
   <v-row justify="center" sty class="mt-4">
-    <v-col>
+
+    <v-col xs= "12" sm="12" lg="4" md="4" >
+      <h1>OR CONNECT WITH ME ON SOCIALS</h1> 
+    </v-col>
+
+    <v-col xs= "12" sm="12" lg="4" md="4" >
       <form ref="form" class="contact-container" @submit.prevent="sendEmail"> 
         <div id="contact-name-input" class="input-container column">
           <label>Name:</label>
@@ -11,37 +16,43 @@
           <label>Email:</label>
           <input id="contact-name-input-field" class="input-field" name="user_email" > 
         </div>
+        <label class="spam-advertisement">
+            <v-icon color="grey">mdi-lock-check</v-icon>
+            I won't send you spam 
+        </label>
         <div id="contact-message-input" class="input-container column">
           <label>Message:</label>
           <textarea id="contact-message-input-field" class="input-field" name="message"  rows="8"> </textarea>
         </div> 
-        
-        <v-card-actions class="d-flex justify-space-between networks-container">
+
+          <v-card-actions class="networks-container"> 
             <div >
-            <v-btn class="mr-3" icon v-for="red in rrss" :key="red.titulo"  
-              :href= red.url target="_blank"  
-              >
-              <v-icon size="40px" > {{red.icono}}</v-icon>
-            </v-btn>
+              <v-btn class="mr-3" icon v-for="red in rrss" :key="red.titulo"  
+                :href= red.url target="_blank"  
+                >
+                <v-icon size="40px" > {{red.icono}}</v-icon>
+              </v-btn>
             </div>
-          <v-btn type="submit" value="Send">Submit </v-btn>
-        </v-card-actions>  
+            <v-btn type="submit" class="submit-button" value="Send">Submit </v-btn>
+        </v-card-actions> 
       </form>
     </v-col>
 
-    <v-col  class = "image" xs= "12" sm="12" lg="6" md="6" >
-      <v-img contain style="max-height: 600px;" src= "../assets/images/degradada.png" eager> 
+    <v-col  class = "image" xs= "12" sm="12" lg="4" md="4" >
+      <v-img contain style="max-height: 575px;" src= "../assets/images/degradada.png" eager> 
       </v-img> 
     </v-col>
     
   </v-row>
-  </v-container>
+ 
  
 </template>
 
 <style scoped>
-  .contact-container{
-    height:100%;
+  .contact-container{ 
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px 20px 20px 20px;
   }
 
   .column{
@@ -68,11 +79,18 @@
     margin-bottom: 20px;
   }
 
+ 
+
   #contact-email-input{
-    margin-bottom: 20px;
+  
   }
+
+  .spam-advertisement{ 
+    color: grey;  
+  }
+
   #contact-message-input{
-  flex:1;
+    margin-top: 20px;
   }
 
   #contact-message-input-field{
@@ -81,6 +99,16 @@
 
   .networks-container{
     margin-top:20px; 
+    position: relative; 
+    height: 40px;
+  }
+
+  .submit-button{
+    position: absolute;
+    right: 10px; 
+  }
+
+  .image{ 
   }
  
 </style>

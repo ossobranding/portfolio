@@ -1,30 +1,28 @@
 <template>
     <v-container>
-      <v-row class="mt-4">
-        <v-col class="pt-10"> 
+      <v-row >
+        <v-col > 
            <h2 class="hobbie-title">  Books  </h2> 
          
           <h4  class="hobbie-text" >  
-            La idea de OSSO surge de un chico de 21 años que tras dedicar toda su vida a los estudios decide dar con 
-            la fórmula que convierta toda su energía, aprendizaje y aficiones en la mejor versión de sí mismo como profesional.
+             
           </h4> 
         </v-col>
 
         <v-col class="mx-6"> 
           <h2 class="hobbie-title">  Sports  </h2> 
-         
+            
           <h4 class="hobbie-text" >  
-            La idea de OSSO surge de un chico de 21 años que tras dedicar toda su vida a los estudios decide dar con 
-            la fórmula que convierta toda su energía, aprendizaje y aficiones en la mejor versión de sí mismo como profesional.
+             I currently practice crossfit as my main sport. Although I enjoy padel and basketball parties with my friends.  
+             Exercising helps me feel good about myself, to clear my mind and also for disconnect from my work 
           </h4> 
         </v-col>
 
-        <v-col class="pt-10">
+        <v-col >
           <h2 class="hobbie-title">  Paint  </h2> 
          
           <h4 class="hobbie-text" >  
-            La idea de OSSO surge de un chico de 21 años que tras dedicar toda su vida a los estudios decide dar con 
-            la fórmula que convierta toda su energía, aprendizaje y aficiones en la mejor versión de sí mismo como profesional.
+             
           </h4> 
         </v-col>
       </v-row>
@@ -54,7 +52,7 @@
     font-family:"Rubik-Light";
     font-size:20px; 
     color:grey; 
-    text-align:justify;
+    text-align:center;
   }
 </style>
 

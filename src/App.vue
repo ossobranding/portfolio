@@ -41,6 +41,7 @@
   
   .app{
     font-family:Rubik-Regular;
+    background-color: #E8E8E8 !important; 
   }
 
   .cursor{
