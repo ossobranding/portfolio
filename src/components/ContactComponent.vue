@@ -1,18 +1,91 @@
 <template>
   <v-container>
-    <v-row justify="center" class="mt-4">
-      <form ref="form" @submit.prevent="sendEmail">
-        <label>Name</label>
-        <input type="text" name="user_name">
-        <label>Email</label>
-        <input type="email" name="user_email">
-        <label>Message</label>
-        <textarea name="message"></textarea>
-        <input type="submit" value="Send">
-    </form>
-    </v-row>
+  <v-row justify="center" sty class="mt-4">
+    <v-col>
+      <form ref="form" class="contact-container" @submit.prevent="sendEmail"> 
+        <div id="contact-name-input" class="input-container column">
+          <label>Name:</label>
+          <input id="contact-name-input-field" class="input-field" name="user_name" > 
+        </div>
+        <div id="contact-email-input" class="input-container column">
+          <label>Email:</label>
+          <input id="contact-name-input-field" class="input-field" name="user_email" > 
+        </div>
+        <div id="contact-message-input" class="input-container column">
+          <label>Message:</label>
+          <textarea id="contact-message-input-field" class="input-field" name="message"  rows="8"> </textarea>
+        </div> 
+        
+        <v-card-actions class="d-flex justify-space-between networks-container">
+            <div >
+            <v-btn class="mr-3" icon v-for="red in rrss" :key="red.titulo"  
+              :href= red.url target="_blank"  
+              >
+              <v-icon size="40px" > {{red.icono}}</v-icon>
+            </v-btn>
+            </div>
+          <v-btn type="submit" value="Send">Submit </v-btn>
+        </v-card-actions>  
+      </form>
+    </v-col>
+
+    <v-col  class = "image" xs= "12" sm="12" lg="6" md="6" >
+      <v-img contain style="max-height: 600px;" src= "../assets/images/degradada.png" eager> 
+      </v-img> 
+    </v-col>
+    
+  </v-row>
   </v-container>
+ 
 </template>
+
+<style scoped>
+  .contact-container{
+    height:100%;
+  }
+
+  .column{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .input-container{
+    width: 100%;
+    box-sizing: border-box;
+    background: #F5F5F5;
+    color: #ACACAC;
+    border-radius: 13px;
+    padding: 7px;
+    padding-left: 15px;
+    border: 2px solid #F5F5F5;
+  }
+
+  .input-field{
+    outline: none;
+  }
+
+  #contact-name-input{
+    margin-bottom: 20px;
+  }
+
+  #contact-email-input{
+    margin-bottom: 20px;
+  }
+  #contact-message-input{
+  flex:1;
+  }
+
+  #contact-message-input-field{
+  resize: none;
+  }
+
+  .networks-container{
+    margin-top:20px; 
+  }
+ 
+</style>
+
+
 
 <script>
 import emailjs from '@emailjs/browser';
@@ -28,10 +101,30 @@ export default {
             console.log('FAILED...', error.text);
         });
     }
-  }
+  },
+
+  data() {
+    return { 
+      rrss:[
+        {
+          titulo: 'Linkedin',
+          icono: 'mdi-linkedin',
+          url: 'https://es.linkedin.com/in/oscarcasadolorenzo'
+        },
+        {
+          titulo: 'Github',
+          icono: 'mdi-github',
+          url: 'https://github.com/ossobranding'
+        },
+        {
+          titulo: 'Instagram',
+          icono: 'mdi-instagram',
+          url: 'https://www.instagram.com/osso.branding/'
+        } 
+      ], 
+    };
+    },
 }
 </script>
 
-<style>
-
-</style>
+ 

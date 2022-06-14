@@ -5,16 +5,16 @@
     
       <landing-page></landing-page>
 
-      <h1 class="custom-header about">Sobre mi</h1>
+      <h1 class="custom-header about">About me</h1>
       <about-component></about-component>  
 
-      <h1 class="custom-header skills">Conocimientos</h1>
+      <h1 class="custom-header skills">Knowledges</h1>
       <skills-component></skills-component> 
 
-      <h1 class="custom-header projects"> Projectos</h1>
+      <h1 class="custom-header projects"> Projects</h1>
       <projects-component></projects-component>
 
-      <h1 class="custom-header contact">Contacto</h1>
+      <h1 class="custom-header contact">Contact</h1>
       <contact-component></contact-component>
 
       <footer-component></footer-component>

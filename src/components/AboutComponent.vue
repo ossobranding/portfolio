@@ -2,10 +2,9 @@
      
       <v-row class="mt-4">
         <v-col  xs= "12" sm="12" lg="6" md="6" >
-          <v-parallax >
-            <v-img  src= "../assets/images/1.jpg" eager> 
-            </v-img> 
-          </v-parallax>
+        
+           
+       
             
         </v-col>
 
@@ -30,7 +29,7 @@
               <a  style="text-decoration:none;color:black;" class="ml-2"
                  :href=  " '/files/CV.pdf' "   download = "CV.pdf"
               >
-                  VER CURRICULUM
+                  RESUME
               </a>
             </v-btn>
           </v-row>

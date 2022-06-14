@@ -1,7 +1,6 @@
 <template>
   <div class="landing-container">
-      <div id="content">
-        
+      <div id="content">  
         <vue-typer  
             class = "typer"
             :text='[ "OSCAR CASADO", "OSSO"]'
@@ -16,8 +15,8 @@
             :erase-on-complete='false'
             caret-animation='blink' 
         ></vue-typer> 
-        <h1 style="text-align: center;  "> Desarrollador web fullsack</h1>
-        <h1 style="text-align: center;  ">& diseñador gráfico</h1>  
+        <h1 style="text-align: center;  ">Fullstack web developer</h1>
+        <h1 style="text-align: center;  ">& UX/UI designer</h1>  
       </div> 
         
   </div> 
