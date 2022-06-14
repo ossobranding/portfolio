@@ -45,8 +45,15 @@
   .hobbie-title{
     font-size:50px;  
     font-weight:bold; 
-    text-align:center 
+    text-align:center; 
+    
+    text-decoration: underline 0.05em rgba(255, 255, 255, 0);
+    transition: text-decoration-color 300ms;
   }
+
+  .hobbie-title:hover {
+    text-decoration-color: rgba(0, 0, 0, 1);
+}
 
   .hobbie-text{
     font-family:"Rubik-Light";
